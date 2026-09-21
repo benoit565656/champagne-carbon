@@ -1,0 +1,514 @@
+[
+  {
+    "id": 15558077874502,
+    "title": "Carbon Bolide Vintage 2017",
+    "handle": "bolide-vintage-2017",
+    "body_html": "<p><strong>BOLIDE</strong><br><strong>L'EXPRESSION CARBON × BUGATTI</strong></p>\n<p>BOLIDE est l'expression la plus radicale et futuriste de l'univers CARBON × BUGATTI — un champagne façonné par l'aérodynamique extrême, la pureté des formes et la performance sans compromis.</p>\n<p>Conçue autant comme objet sculptural que comme cuvée d'exception, BOLIDE incarne vitesse, précision et élégance ultra-moderne. Une édition collector rare, conçue pour ceux qui recherchent intensité et exclusivité.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>100% Chardonnay — Blanc de Blancs, Grand Cru<br>Une expression pure et cristalline du Chardonnay, offrant tension remarquable, finesse et précision minérale.</p>\n<p><strong>DÉGUSTATION</strong><br>Un vin intense et frais s'ouvrant sur agrumes et floraison printanière, évoluant vers fruits jaunes confits, notes toastées subtiles et herbes aromatiques. La bouche mène avec intensité avant de devenir crémeuse et veloutée, concluant sur une finale vive et saline.</p>\n<p><strong>ACCORDS</strong><br>Ceviche de Saint-Jacques, sashimi de thon rouge ou filet de Saint-Pierre aux agrumes.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Millésime · 2017<br>Cépages · 100% Chardonnay — Blanc de Blancs<br>Classification · Grand Cru<br>Vieillissement · 7 ans sur lattes<br>Dosage · 7 g/L — Brut<br>Alcool · 12,5% vol<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/bolide-vintage-2017-1.png",
+      "/images/bottles/bolide-vintage-2017-2.png",
+      "/images/bottles/bolide-vintage-2017-3.jpg",
+      "/images/bottles/bolide-vintage-2017-4.png",
+      "/images/bottles/bolide-vintage-2017-5.png",
+      "/images/bottles/bolide-vintage-2017-6.png",
+      "/images/bottles/bolide-vintage-2017-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961364984134,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "290.00",
+        "available": true
+      },
+      {
+        "id": 56961365016902,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "600.00",
+        "available": true
+      },
+      {
+        "id": 56961365049670,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "2000.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558068306246,
+    "title": "Carbon ƎB.02 Chiron 300+ Vintage 2006",
+    "handle": "chiron-300-vintage-2006",
+    "body_html": "<p><strong>CHIRON SUPER SPORT 300+</strong><br><strong>L'EXPRESSION CARBON × BUGATTI</strong></p>\n<p>Créée en hommage à l'excellence technique et à la performance extrême, CHIRON SUPER SPORT 300+ incarne l'expression la plus puissante et sculpturale de l'univers CARBON — où le savoir-faire champenois rencontre la philosophie de l'hypercar.</p>\n<p>Une cuvée bâtie sur la vitesse, la précision et l'élégance aérodynamique. Rare, architecturale et sans compromis.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>100% Chardonnay — Blanc de Blancs<br>Un Chardonnay pur et cristallin issu d'un millésime exceptionnel, offrant tension minérale, profondeur et finesse remarquable.</p>\n<p><strong>DÉGUSTATION</strong><br>Une expression mature et complexe s'ouvrant sur agrumes confits, fleurs blanches et notes toastées délicates. La bouche est précise et stratifiée, avec une texture crémeuse et une finale longue et saline — la marque d'un Blanc de Blancs vieilli.</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Huîtres, langoustines ou fromages affinés à pâte dure.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Millésime · 2006<br>Cépages · 100% Chardonnay — Blanc de Blancs<br>Dosage · 7 g/L — Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/chiron-300-vintage-2006-1.png",
+      "/images/bottles/chiron-300-vintage-2006-2.png",
+      "/images/bottles/chiron-300-vintage-2006-3.jpg",
+      "/images/bottles/chiron-300-vintage-2006-4.png",
+      "/images/bottles/chiron-300-vintage-2006-5.png",
+      "/images/bottles/chiron-300-vintage-2006-6.png",
+      "/images/bottles/chiron-300-vintage-2006-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961365737798,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "320.00",
+        "available": true
+      },
+      {
+        "id": 56961365770566,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "650.00",
+        "available": true
+      },
+      {
+        "id": 56961365803334,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1500.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558058934598,
+    "title": "Carbon ƎB.01 Vintage 2002",
+    "handle": "eb-01-bugatti-vintage-2002",
+    "body_html": "<p><strong>ƎB.01</strong><br><strong>L'EXPRESSION CARBON × BUGATTI</strong></p>\n<p>ƎB.01 marque l'origine de l'univers CARBON × BUGATTI — la première cuvée où le savoir-faire champenois rencontre l'univers des hypercars. Une affirmation de précision, de puissance et d'élégance intemporelle.</p>\n<p>Conçue autant comme objet de collection que comme vin d'exception, ƎB.01 incarne patrimoine et rareté. Un millésime mature pour ceux qui recherchent l'extraordinaire.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>90% Chardonnay · 10% Pinot Noir<br>Un assemblage raffiné combinant la tension minérale et la finesse du Chardonnay à la structure et la profondeur du Pinot Noir.</p>\n<p><strong>DÉGUSTATION</strong><br>Un millésime mature et expressif s'ouvrant sur agrumes confits, fruits secs et notes toastées délicates. La bouche est profonde et stratifiée, avec une texture crémeuse et une finale longue et élégante — la signature d'un champagne pleinement évolué.</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Homard, volaille en sauce crème ou fromages affinés.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Millésime · 2002<br>Cépages · 90% Chardonnay, 10% Pinot Noir<br>Dosage · 7 g/L — Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/eb-01-bugatti-vintage-2002-1.png",
+      "/images/bottles/eb-01-bugatti-vintage-2002-2.jpg",
+      "/images/bottles/eb-01-bugatti-vintage-2002-3.png",
+      "/images/bottles/eb-01-bugatti-vintage-2002-4.png",
+      "/images/bottles/eb-01-bugatti-vintage-2002-5.png",
+      "/images/bottles/eb-01-bugatti-vintage-2002-6.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961366065478,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "350.00",
+        "available": true
+      },
+      {
+        "id": 56961366098246,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "700.00",
+        "available": true
+      },
+      {
+        "id": 56961366131014,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1600.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558051135814,
+    "title": "Carbon Blanc de Noirs Vintage 2009",
+    "handle": "blanc-de-noirs-vintage-2009",
+    "body_html": "<p><strong>BLANC DE NOIRS</strong><br><strong>VINTAGE 2009</strong></p>\n<p>Une expression puissante et généreuse du style CARBON. Élaboré exclusivement à partir de raisins noirs, ce Blanc de Noirs révèle la profondeur, la structure et le caractère d'un grand millésime de Champagne.</p>\n<p>Une cuvée pleine de présence et d'intensité — pour ceux qui recherchent richesse et longueur.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>85% Pinot Noir · 15% Pinot Meunier<br>Un Blanc de Noirs bâti sur les cépages noirs, offrant corps, structure et profondeur, avec la rondeur qui définit le millésime 2009.</p>\n<p><strong>DÉGUSTATION</strong><br>Une expression riche et ample s'ouvrant sur fruits rouges et notes subtiles de brioche et d'épices. La bouche est large et puissante, avec une texture crémeuse et une finale profonde et persistante.</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Viandes rouges rôties, gibier ou fromages affinés.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Millésime · 2009<br>Style · Blanc de Noirs<br>Cépages · 85% Pinot Noir · 15% Pinot Meunier<br>Dosage · 6.5 g/L — Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/blanc-de-noirs-vintage-2009-1.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-2.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-3.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-4.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-5.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-6.png",
+      "/images/bottles/blanc-de-noirs-vintage-2009-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard",
+          "Personalised"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961366327622,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "320.00",
+        "available": true
+      },
+      {
+        "id": 56961386971462,
+        "title": "Bottle 75 cl / Personalised",
+        "option1": "Bottle 75 cl",
+        "option2": "Personalised",
+        "price": "370.00",
+        "available": true
+      },
+      {
+        "id": 56961366360390,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "650.00",
+        "available": true
+      },
+      {
+        "id": 56961387004230,
+        "title": "Magnum 1.5 L / Personalised",
+        "option1": "Magnum 1.5 L",
+        "option2": "Personalised",
+        "price": "700.00",
+        "available": true
+      },
+      {
+        "id": 56961366393158,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1400.00",
+        "available": true
+      },
+      {
+        "id": 56961387036998,
+        "title": "Jeroboam 3 L / Personalised",
+        "option1": "Jeroboam 3 L",
+        "option2": "Personalised",
+        "price": "1500.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558030524742,
+    "title": "Carbon Rosé",
+    "handle": "carbon-rose",
+    "body_html": "<p><strong>ROSÉ</strong><br><strong>UNE EXPRESSION HAUTE COUTURE DE CARBON</strong></p>\n<p>La couleur de CARBON Rosé est une œuvre de haute couture — un rose profond aux reflets cuivrés et une mousse vive, où un défilé infini de fines bulles nacrées semble s'étendre à l'infini.</p>\n<p>Une cuvée distinctive définie par sa fraîcheur vive et printanière.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>50% Chardonnay · 25% Pinot Noir · 25% Pinot Meunier<br>Un assemblage équilibré unissant la finesse du Chardonnay au fruité et à la structure des raisins noirs.</p>\n<p><strong>DÉGUSTATION</strong><br>Un nez très aromatique offrant un éventail coloré de fruits rouges — petits fruits rouges frais, prune, gingembre, clou de girofle et notes de noisettes subtiles. La bouche combine des saveurs riches de fruits rouges avec une acidité vive, des notes autolytiques pâtissières délicates et une mousse équilibrée, concluant sur une finale longue et croquante.</p>\n<p><strong>RÉCOMPENSES</strong><br>Decanter World Wine Awards 2022 — Bronze<br>Dégusté par Andreas Larsson, Best Sommelier of the World — 90 points</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Desserts aux fruits rouges, canard ou fine charcuterie.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Style · Rosé<br>Cépages · 50% Chardonnay · 25% Pinot Noir · 25% Pinot Meunier<br>Dosage · Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/carbon-rose-1.png",
+      "/images/bottles/carbon-rose-2.png",
+      "/images/bottles/carbon-rose-3.png",
+      "/images/bottles/carbon-rose-4.png",
+      "/images/bottles/carbon-rose-5.png",
+      "/images/bottles/carbon-rose-6.png",
+      "/images/bottles/carbon-rose-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard",
+          "Personalised"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961366622534,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "270.00",
+        "available": true
+      },
+      {
+        "id": 56961387757894,
+        "title": "Bottle 75 cl / Personalised",
+        "option1": "Bottle 75 cl",
+        "option2": "Personalised",
+        "price": "320.00",
+        "available": true
+      },
+      {
+        "id": 56961366655302,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "550.00",
+        "available": true
+      },
+      {
+        "id": 56961387790662,
+        "title": "Magnum 1.5 L / Personalised",
+        "option1": "Magnum 1.5 L",
+        "option2": "Personalised",
+        "price": "600.00",
+        "available": true
+      },
+      {
+        "id": 56961366688070,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1600.00",
+        "available": true
+      },
+      {
+        "id": 56961387823430,
+        "title": "Jeroboam 3 L / Personalised",
+        "option1": "Jeroboam 3 L",
+        "option2": "Personalised",
+        "price": "1700.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558020858182,
+    "title": "Carbon Blanc de Blancs Grand Cru Vintage 2019",
+    "handle": "blanc-de-blancs-grand-cru-2019",
+    "body_html": "<p><strong>BLANC DE BLANCS</strong><br><strong>GRAND CRU · VINTAGE 2019</strong></p>\n<p>Un millésime Grand Cru qui capte l'attention dès le premier regard. Sa couronne de bulles magnifique et persistante se pose comme un voile soyeux et délicat, tandis qu'une couleur or pâle annonce une entrée radieuse.</p>\n<p>L'expression la plus raffinée et gastronomique de la maison CARBON — conçue pour la table et la haute cuisine.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>100% Chardonnay — Blanc de Blancs, Grand Cru<br>Un Chardonnay Grand Cru pur d'une finesse exceptionnelle, offrant tension, précision et profondeur.</p>\n<p><strong>DÉGUSTATION</strong><br>L'attaque est langoureusement ronde, veloutée et harmonieuse. Plutôt qu'une simple effervescence, le vin révèle une souplesse éthérée portée par des bulles extrêmement fines et crémeuses, déployant de belles saveurs de fruits jaunes et de fruits secs, relevées par une note de fraîcheur. Un équilibre finement orchestré du début à la fin.</p>\n<p><strong>RÉCOMPENSES</strong><br>Gilbert &amp; Gaillard 2026 — Double Gold</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Un champagne gastronomique — idéal avec la haute cuisine, les poissons fins et les crustacés.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Millésime · 2019<br>Style · Blanc de Blancs<br>Cépages · 100% Chardonnay<br>Classification · Grand Cru<br>Dosage · Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-1.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-2.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-3.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-4.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-5.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-6.png",
+      "/images/bottles/blanc-de-blancs-grand-cru-2019-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard",
+          "Personalised"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961366819142,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "250.00",
+        "available": true
+      },
+      {
+        "id": 56961388151110,
+        "title": "Bottle 75 cl / Personalised",
+        "option1": "Bottle 75 cl",
+        "option2": "Personalised",
+        "price": "300.00",
+        "available": true
+      },
+      {
+        "id": 56961366851910,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "500.00",
+        "available": true
+      },
+      {
+        "id": 56961388183878,
+        "title": "Magnum 1.5 L / Personalised",
+        "option1": "Magnum 1.5 L",
+        "option2": "Personalised",
+        "price": "550.00",
+        "available": true
+      },
+      {
+        "id": 56961366884678,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1400.00",
+        "available": true
+      },
+      {
+        "id": 56961388216646,
+        "title": "Jeroboam 3 L / Personalised",
+        "option1": "Jeroboam 3 L",
+        "option2": "Personalised",
+        "price": "1500.00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": 15558009258310,
+    "title": "Carbon Brut",
+    "handle": "carbon-brut",
+    "body_html": "<p><strong>BRUT</strong><br><strong>LA SIGNATURE CARBON</strong></p>\n<p>CARBON Brut est une performance artistique. Un ballet atomique de bulles d'une finesse exceptionnelle entame sa danse frénétique, accueilli par une mousse persistante et crémeuse — un éclat étincelant et radieux en flûte.</p>\n<p>La cuvée signature de la Maison, et son expression la plus polyvalente.</p>\n<hr>\n<p><strong>LA CUVÉE</strong><br>50% Chardonnay · 25% Pinot Noir · 25% Pinot Meunier<br>Un assemblage équilibré des trois cépages de Champagne, unissant finesse, fruité et structure.</p>\n<p><strong>DÉGUSTATION</strong><br>Une couleur or pâle introduit un bouquet intemporel. Le nez complexe évoque la pêche blanche, la poire pochée et une épice délicate, avec une vague de brioche toastée et une pointe d'agrumes confirmant son élégance. L'attaque est superbe avant de devenir corsée, riche et généreuse — voluptueuse, avec une acidité équilibrante et agréable.</p>\n<p><strong>RÉCOMPENSES</strong><br>Decanter World Wine Awards 2021 — 90 points</p>\n<p><strong>DÉGORGEMENT</strong><br>Vieillissement prolongé sur lattes. Chaque bouteille repose ensuite 6 à 12 mois après dégorgement avant expédition, pour garantir une fraîcheur optimale.</p>\n<p><strong>ACCORDS</strong><br>Apéritif, fruits de mer ou viandes blanches.</p>\n<hr>\n<p><strong>SPÉCIFICATIONS</strong><br>Style · Brut<br>Cépages · 50% Chardonnay · 25% Pinot Noir · 25% Pinot Meunier<br>Dosage · Brut<br>Alcool · 12,5% vol<br>Dégorgement · 6 à 12 mois avant expédition<br>Format · 750 ml</p>",
+    "images": [
+      "/images/bottles/carbon-brut-1.png",
+      "/images/bottles/carbon-brut-2.png",
+      "/images/bottles/carbon-brut-3.png",
+      "/images/bottles/carbon-brut-4.png",
+      "/images/bottles/carbon-brut-5.png",
+      "/images/bottles/carbon-brut-6.png",
+      "/images/bottles/carbon-brut-7.png"
+    ],
+    "options": [
+      {
+        "name": "Format",
+        "position": 1,
+        "values": [
+          "Bottle 75 cl",
+          "Magnum 1.5 L",
+          "Jeroboam 3 L"
+        ]
+      },
+      {
+        "name": "Personalisation",
+        "position": 2,
+        "values": [
+          "Standard",
+          "Personalised"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 56961367048518,
+        "title": "Bottle 75 cl / Standard",
+        "option1": "Bottle 75 cl",
+        "option2": "Standard",
+        "price": "220.00",
+        "available": true
+      },
+      {
+        "id": 56961388314950,
+        "title": "Bottle 75 cl / Personalised",
+        "option1": "Bottle 75 cl",
+        "option2": "Personalised",
+        "price": "270.00",
+        "available": true
+      },
+      {
+        "id": 56961367081286,
+        "title": "Magnum 1.5 L / Standard",
+        "option1": "Magnum 1.5 L",
+        "option2": "Standard",
+        "price": "450.00",
+        "available": true
+      },
+      {
+        "id": 56961388347718,
+        "title": "Magnum 1.5 L / Personalised",
+        "option1": "Magnum 1.5 L",
+        "option2": "Personalised",
+        "price": "500.00",
+        "available": true
+      },
+      {
+        "id": 56961367114054,
+        "title": "Jeroboam 3 L / Standard",
+        "option1": "Jeroboam 3 L",
+        "option2": "Standard",
+        "price": "1250.00",
+        "available": true
+      },
+      {
+        "id": 56961388380486,
+        "title": "Jeroboam 3 L / Personalised",
+        "option1": "Jeroboam 3 L",
+        "option2": "Personalised",
+        "price": "1350.00",
+        "available": true
+      }
+    ]
+  }
+]
