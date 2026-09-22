@@ -30,10 +30,12 @@ export function getCartAddActionUrl(variant: ProductVariant): string {
 export function handleAddToCart(params: CartAddParams) {
   if (typeof window === 'undefined') return;
 
-  const { variant } = params;
+  const { variant, quantity = 1 } = params;
 
   if (variant.link) {
-    window.open(variant.link, '_blank', 'noopener,noreferrer');
+    const separator = variant.link.includes('?') ? '&' : '?';
+    const autoCartUrl = `${variant.link}${separator}autocart=1${quantity > 1 ? `&qty=${quantity}` : ''}`;
+    window.open(autoCartUrl, '_blank', 'noopener,noreferrer');
     return;
   }
 
