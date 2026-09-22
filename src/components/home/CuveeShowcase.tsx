@@ -120,22 +120,28 @@ export function CuveeShowcase() {
                       <span className="text-white font-medium">{currentVariant.format}</span>
                     </div>
 
-                    <div className={`grid gap-1.5 ${product.variants.length > 2 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                    <div className={`grid gap-1.5 ${
+                      product.variants.length === 3
+                        ? 'grid-cols-3'
+                        : product.variants.length === 2
+                        ? 'grid-cols-2'
+                        : 'grid-cols-1'
+                    }`}>
                       {product.variants.map((v, idx) => {
                         const isActive = currentVariantIndex === idx;
                         return (
                           <button
                             key={v.sku}
                             onClick={() => handleFormatChange(product.id, idx)}
-                            className={`h-9 px-1 flex flex-col items-center justify-center text-[9px] font-mono tracking-wider uppercase transition-all border ${
+                            className={`h-10 px-1.5 flex flex-col items-center justify-center text-[9px] font-mono tracking-wider uppercase transition-all rounded border ${
                               isActive
                                 ? 'border-[#c9a24b] bg-[#c9a24b]/15 text-white font-semibold shadow-[0_0_10px_rgba(201,162,75,0.25)]'
                                 : 'border-white/15 bg-[#0a0a0a] text-[#a8a49b] hover:border-white/40 hover:text-white'
                             }`}
                           >
-                            <span>{v.volume}</span>
-                            <span className="text-[8px] opacity-70">
-                              {v.presentationType === 'handcrafted-carbon' ? 'Craft' : 'Sleeve'}
+                            <span className="font-semibold text-[10px]">{v.volume}</span>
+                            <span className="text-[8px] opacity-90">
+                              {v.presentationType === 'handcrafted-carbon' ? 'Craft' : '✨ Luminous'}
                             </span>
                           </button>
                         );

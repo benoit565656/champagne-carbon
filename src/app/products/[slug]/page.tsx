@@ -172,7 +172,13 @@ export default function ProductDetailPage() {
               <span className="text-[#c9a24b] text-[11px] font-mono">{currentVariant.format}</span>
             </div>
 
-            <div className={`grid gap-2 ${product.variants.length > 2 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+            <div className={`grid gap-2 ${
+              product.variants.length === 3
+                ? 'grid-cols-3'
+                : product.variants.length === 2
+                ? 'grid-cols-2'
+                : 'grid-cols-1'
+            }`}>
               {product.variants.map((v, idx) => (
                 <button
                   key={v.sku}
@@ -181,8 +187,8 @@ export default function ProductDetailPage() {
                 >
                   <span className="block font-medium text-xs text-white">{v.format}</span>
                   <span className="text-[10px] text-[#c9a24b] font-mono mt-0.5">₱{v.pricePhp.toLocaleString()}</span>
-                  <span className="text-[9px] text-[#7a7770] font-mono mt-0.5">
-                    {v.presentationType === 'handcrafted-carbon' ? 'Craft' : 'Luminous'} &bull; {v.stock} left
+                  <span className="text-[9px] text-[#a8a49b] font-mono mt-0.5">
+                    {v.presentationType === 'handcrafted-carbon' ? 'Craft Carbon' : '✨ Luminous Sleeve'} &bull; {v.stock} left
                   </span>
                 </button>
               ))}
