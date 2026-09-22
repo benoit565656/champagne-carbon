@@ -38,17 +38,17 @@ export const PRODUCTS: Product[] = [
     ],
     variants: [
       {
-        format: 'Handcrafted 750ml',
+        format: 'Luminous Sleeve 750ml',
         volume: '750ml',
-        sku: 'Product16903',
-        magentoProductId: 16903,
-        productName: 'Champagne Carbon Brut – Handcrafted Carbon Fibre Bottle 750ml',
-        costPhp: 25000,
-        pricePhp: 31250,
-        stock: 1,
-        link: 'https://manila-wine.com/carbon-hand-made-brut-champagne',
-        presentationType: 'handcrafted-carbon',
-        isLuminous: false,
+        sku: 'Product16926',
+        magentoProductId: 16926,
+        productName: 'Champagne Carbon Brut Luminous – Carbon-Look Sleeve 750ml',
+        costPhp: 18800,
+        pricePhp: 23500,
+        stock: 10,
+        link: 'https://manila-wine.com/carbon-sleeve-brut-luminous-750ml-champagne',
+        presentationType: 'carbon-sleeve-luminous',
+        isLuminous: true,
         available: true
       },
       {
@@ -66,17 +66,17 @@ export const PRODUCTS: Product[] = [
         available: true
       },
       {
-        format: 'Luminous Sleeve 750ml',
+        format: 'Handcrafted 750ml',
         volume: '750ml',
-        sku: 'Product16926',
-        magentoProductId: 16926,
-        productName: 'Champagne Carbon Brut Luminous – Carbon-Look Sleeve 750ml',
-        costPhp: 18800,
-        pricePhp: 23500,
-        stock: 10,
-        link: 'https://manila-wine.com/carbon-sleeve-brut-luminous-750ml-champagne',
-        presentationType: 'carbon-sleeve-luminous',
-        isLuminous: true,
+        sku: 'Product16903',
+        magentoProductId: 16903,
+        productName: 'Champagne Carbon Brut – Handcrafted Carbon Fibre Bottle 750ml',
+        costPhp: 25000,
+        pricePhp: 31250,
+        stock: 1,
+        link: 'https://manila-wine.com/carbon-hand-made-brut-champagne',
+        presentationType: 'handcrafted-carbon',
+        isLuminous: false,
         available: true
       }
     ]
@@ -119,17 +119,17 @@ export const PRODUCTS: Product[] = [
     ],
     variants: [
       {
-        format: 'Handcrafted 750ml',
+        format: 'Luminous Sleeve 750ml',
         volume: '750ml',
-        sku: 'Product16917',
-        magentoProductId: 16917,
-        productName: 'Champagne Carbon Rosé – Handcrafted Carbon Fibre Bottle 750ml',
-        costPhp: 32000,
-        pricePhp: 40000,
-        stock: 1,
-        link: 'https://manila-wine.com/carbon-hand-made-rose-champagne',
-        presentationType: 'handcrafted-carbon',
-        isLuminous: false,
+        sku: 'Product16925',
+        magentoProductId: 16925,
+        productName: 'Champagne Carbon Rosé Luminous – Carbon-Look Sleeve 750ml',
+        costPhp: 21000,
+        pricePhp: 26250,
+        stock: 9,
+        link: 'https://manila-wine.com/carbon-sleeve-rose-luminous-750ml-champagne',
+        presentationType: 'carbon-sleeve-luminous',
+        isLuminous: true,
         available: true
       },
       {
@@ -147,17 +147,17 @@ export const PRODUCTS: Product[] = [
         available: true
       },
       {
-        format: 'Luminous Sleeve 750ml',
+        format: 'Handcrafted 750ml',
         volume: '750ml',
-        sku: 'Product16925',
-        magentoProductId: 16925,
-        productName: 'Champagne Carbon Rosé Luminous – Carbon-Look Sleeve 750ml',
-        costPhp: 21000,
-        pricePhp: 26250,
-        stock: 9,
-        link: 'https://manila-wine.com/carbon-sleeve-rose-luminous-750ml-champagne',
-        presentationType: 'carbon-sleeve-luminous',
-        isLuminous: true,
+        sku: 'Product16917',
+        magentoProductId: 16917,
+        productName: 'Champagne Carbon Rosé – Handcrafted Carbon Fibre Bottle 750ml',
+        costPhp: 32000,
+        pricePhp: 40000,
+        stock: 1,
+        link: 'https://manila-wine.com/carbon-hand-made-rose-champagne',
+        presentationType: 'handcrafted-carbon',
+        isLuminous: false,
         available: true
       }
     ]
@@ -199,20 +199,6 @@ export const PRODUCTS: Product[] = [
     ],
     variants: [
       {
-        format: 'Handcrafted 750ml',
-        volume: '750ml',
-        sku: 'Product16924',
-        magentoProductId: 16924,
-        productName: 'Champagne Carbon x Bugatti EB01 Vintage 2002 – Handcrafted Carbon Fibre Bottle 750ml',
-        costPhp: 29500,
-        pricePhp: 36875,
-        stock: 4,
-        link: 'https://manila-wine.com/carbon-hand-made-bugatti-eb01-2002-champagne',
-        presentationType: 'handcrafted-carbon',
-        isLuminous: false,
-        available: true
-      },
-      {
         format: 'Luminous Sleeve 750ml',
         volume: '750ml',
         sku: 'Product16922',
@@ -224,6 +210,20 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-sleeve-bugatti-eb01-luminous-2017-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
+        available: true
+      },
+      {
+        format: 'Handcrafted 750ml',
+        volume: '750ml',
+        sku: 'Product16924',
+        magentoProductId: 16924,
+        productName: 'Champagne Carbon x Bugatti EB01 Vintage 2002 – Handcrafted Carbon Fibre Bottle 750ml',
+        costPhp: 29500,
+        pricePhp: 36875,
+        stock: 4,
+        link: 'https://manila-wine.com/carbon-hand-made-bugatti-eb01-2002-champagne',
+        presentationType: 'handcrafted-carbon',
+        isLuminous: false,
         available: true
       }
     ]

@@ -30,58 +30,14 @@ export function getCartAddActionUrl(variant: ProductVariant): string {
 export function handleAddToCart(params: CartAddParams) {
   if (typeof window === 'undefined') return;
 
-  const { variant, quantity = 1 } = params;
-  const productId = variant.magentoProductId || parseInt(variant.sku.replace(/\D/g, ''), 10);
+  const { variant } = params;
 
-  if (!productId && variant.link) {
+  if (variant.link) {
     window.open(variant.link, '_blank', 'noopener,noreferrer');
     return;
   }
 
-  try {
-    const actionUrl = getCartAddActionUrl(variant);
-
-    // Create a dynamic form to perform a standard POST navigation into Manila Wine's cart
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = actionUrl;
-    form.target = '_blank';
-    form.style.display = 'none';
-
-    // Product ID
-    const inputProd = document.createElement('input');
-    inputProd.type = 'hidden';
-    inputProd.name = 'product';
-    inputProd.value = String(productId);
-    form.appendChild(inputProd);
-
-    // Quantity
-    const inputQty = document.createElement('input');
-    inputQty.type = 'hidden';
-    inputQty.name = 'qty';
-    inputQty.value = String(quantity);
-    form.appendChild(inputQty);
-
-    // Return URL parameter
-    const inputUenc = document.createElement('input');
-    inputUenc.type = 'hidden';
-    inputUenc.name = 'uenc';
-    inputUenc.value = CART_RETURN_UENC;
-    form.appendChild(inputUenc);
-
-    document.body.appendChild(form);
-    form.submit();
-
-    // Clean up
-    setTimeout(() => {
-      document.body.removeChild(form);
-    }, 1000);
-  } catch (err) {
-    console.error('Error adding to cart, opening direct link:', err);
-    if (variant.link) {
-      window.open(variant.link, '_blank', 'noopener,noreferrer');
-    }
-  }
+  window.open(MANILA_WINE_CART_URL, '_blank', 'noopener,noreferrer');
 }
 
 /**
