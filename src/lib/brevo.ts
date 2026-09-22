@@ -491,3 +491,35 @@ export async function launchCampaignBlast(emails: string[], options: TemplateOpt
     errors: errors.slice(0, 10),
   };
 }
+
+export async function syncContactToBrevo(
+  email: string,
+  attributes?: Record<string, any>
+): Promise<boolean> {
+  const config = getBrevoConfig();
+  if (!config.apiKey) return false;
+
+  try {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': config.apiKey,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        updateEnabled: true,
+        attributes: {
+          SOURCE: 'Champagne Carbon Private Access',
+          ...attributes,
+        },
+      }),
+    });
+
+    return res.ok || res.status === 201 || res.status === 204;
+  } catch (err) {
+    console.error('Failed to sync contact to Brevo:', err);
+    return false;
+  }
+}
