@@ -1,11 +1,18 @@
 
+export type PresentationType = 'handcrafted-carbon' | 'carbon-sleeve-luminous';
+
 export interface ProductVariant {
-  format: string; // e.g. "Bottle 75 cl", "Magnum 1.5 L", "Jeroboam 3 L"
-  volume: string; // e.g. "750ml", "1500ml", "3000ml"
-  sku: string;    // Manila Wine Magento Simple Product SKU
-  magentoProductId?: number;
-  urlKey?: string;
-  pricePhp?: number;
+  format: string; // e.g. "Bottle 75 cl", "Magnum 1.5 L"
+  volume: string; // e.g. "750ml", "1.5L"
+  sku: string;    // Manila Wine SKU e.g. "Product16903"
+  magentoProductId?: number; // e.g. 16903
+  productName: string;
+  costPhp: number;
+  pricePhp: number;
+  stock: number;
+  link: string;
+  presentationType: PresentationType;
+  isLuminous: boolean;
   available: boolean;
 }
 
