@@ -7,6 +7,8 @@ import { Phone, Mail, MapPin, Send, CheckCircle2, ShieldCheck } from 'lucide-rea
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,9 +18,29 @@ export default function ContactPage() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to submit inquiry. Please try again.');
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || 'An unexpected error occurred. Please contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -184,12 +206,28 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
+                {errorMessage && (
+                  <div className="p-3 bg-red-950/50 border border-red-800/60 rounded text-red-300 text-xs">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-gold hover:bg-gold-light text-carbon-950 font-bold uppercase tracking-luxury rounded transition-colors flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-gold hover:bg-gold-light text-carbon-950 font-bold uppercase tracking-luxury rounded transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>SUBMIT ALLOCATION REQUEST</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-carbon-950 border-t-transparent rounded-full animate-spin" />
+                      <span>TRANSMITTING ALLOCATION REQUEST...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>SUBMIT ALLOCATION REQUEST</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

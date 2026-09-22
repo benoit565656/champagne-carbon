@@ -523,3 +523,163 @@ export async function syncContactToBrevo(
     return false;
   }
 }
+
+export interface AllocationInquiryData {
+  name: string;
+  email: string;
+  phone: string;
+  cuveeInterest: string;
+  formatInterest: string;
+  message?: string;
+}
+
+export async function sendAllocationInquiryEmail(inquiry: AllocationInquiryData): Promise<{
+  success: boolean;
+  messageId?: string;
+  error?: string;
+}> {
+  const config = getBrevoConfig();
+  if (!config.apiKey) {
+    return { success: false, error: 'Brevo API key not configured.' };
+  }
+
+  const staffNotificationHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>New VIP Allocation Inquiry</title>
+</head>
+<body style="background-color: #060607; color: #ECE9E2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 24px;">
+  <div style="max-width: 600px; margin: 0 auto; background: #0E0E10; border: 1px solid #C9A24B; border-radius: 8px; overflow: hidden;">
+    <div style="background: #141416; padding: 24px; border-bottom: 1px solid rgba(201,162,75,0.3); text-align: center;">
+      <h2 style="color: #C9A24B; font-size: 18px; margin: 0; text-transform: uppercase; letter-spacing: 2px;">
+        CHAMPAGNE CARBON &bull; MANILA WINE
+      </h2>
+      <p style="color: #A8A49B; font-size: 12px; margin: 6px 0 0 0; text-transform: uppercase; letter-spacing: 1px;">
+        Private Client Allocation Inquiry
+      </p>
+    </div>
+    <div style="padding: 24px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+        <tr style="border-bottom: 1px solid #222226;">
+          <td style="padding: 10px 0; color: #7A7770; width: 140px; font-weight: 500;">Client Name:</td>
+          <td style="padding: 10px 0; color: #FFFFFF; font-weight: 600;">${inquiry.name}</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #222226;">
+          <td style="padding: 10px 0; color: #7A7770;">Email Address:</td>
+          <td style="padding: 10px 0;"><a href="mailto:${inquiry.email}" style="color: #C9A24B; text-decoration: none;">${inquiry.email}</a></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #222226;">
+          <td style="padding: 10px 0; color: #7A7770;">Phone / Viber:</td>
+          <td style="padding: 10px 0;"><a href="tel:${inquiry.phone}" style="color: #C9A24B; text-decoration: none;">${inquiry.phone}</a></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #222226;">
+          <td style="padding: 10px 0; color: #7A7770;">Cuvée Preference:</td>
+          <td style="padding: 10px 0; color: #E5C378;">${inquiry.cuveeInterest}</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #222226;">
+          <td style="padding: 10px 0; color: #7A7770;">Bottle Format:</td>
+          <td style="padding: 10px 0; color: #FFFFFF;">${inquiry.formatInterest}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px 0 6px 0; color: #7A7770; vertical-align: top;">Client Message:</td>
+          <td style="padding: 12px 0 6px 0; color: #D1CECA; line-height: 1.5; white-space: pre-wrap;">${inquiry.message || 'No additional message provided.'}</td>
+        </tr>
+      </table>
+
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="mailto:${inquiry.email}?subject=RE: Champagne Carbon Allocation Inquiry - Manila Wine" style="display: inline-block; background: #C9A24B; color: #000000; padding: 12px 24px; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px;">
+          Reply to Client via Email &rarr;
+        </a>
+      </div>
+    </div>
+    <div style="background: #08080A; padding: 12px; text-align: center; border-top: 1px solid #1C1C20; font-size: 11px; color: #555555;">
+      Transmitted via champagne-carbon.manila-wine.com &bull; Manila Wine Concierge
+    </div>
+  </div>
+</body>
+</html>
+  `;
+
+  // 1. Send notification to contact@manila-wine.com
+  try {
+    const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'api-key': config.apiKey,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        sender: { name: 'Champagne Carbon Concierge', email: config.senderEmail },
+        to: [{ email: 'contact@manila-wine.com', name: 'Manila Wine Concierge' }],
+        replyTo: { email: inquiry.email, name: inquiry.name },
+        subject: `[VIP Allocation Inquiry] ${inquiry.name} — Champagne Carbon`,
+        htmlContent: staffNotificationHtml,
+      }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      console.error('Brevo notification error:', data);
+      return { success: false, error: data.message || 'Failed to dispatch notification email.' };
+    }
+
+    // 2. Also send acknowledgment to the customer
+    try {
+      const clientAckHtml = `
+<!DOCTYPE html>
+<html>
+<body style="background-color: #060607; color: #ECE9E2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 24px;">
+  <div style="max-width: 600px; margin: 0 auto; background: #0E0E10; border: 1px solid rgba(201,162,75,0.4); border-radius: 8px; padding: 32px; text-align: center;">
+    <h2 style="color: #C9A24B; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-top: 0;">
+      Inquiry Received
+    </h2>
+    <p style="color: #FFFFFF; font-size: 14px; line-height: 1.6; margin-top: 16px;">
+      Dear ${inquiry.name},
+    </p>
+    <p style="color: #A8A49B; font-size: 13px; line-height: 1.6;">
+      Thank you for your interest in <strong>Champagne Carbon</strong>. We have successfully received your private allocation inquiry regarding <strong>${inquiry.cuveeInterest}</strong> (${inquiry.formatInterest}).
+    </p>
+    <p style="color: #A8A49B; font-size: 13px; line-height: 1.6;">
+      A Manila Wine prestige beverage director will review your request and contact you directly via phone (${inquiry.phone}) or email within 24 hours.
+    </p>
+    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #222226; font-size: 12px; color: #7A7770;">
+      Direct Concierge: <a href="tel:+639178600808" style="color: #C9A24B; text-decoration: none;">+63917 860 0808</a> &bull; <a href="mailto:contact@manila-wine.com" style="color: #C9A24B; text-decoration: none;">contact@manila-wine.com</a>
+    </div>
+  </div>
+</body>
+</html>
+      `;
+
+      await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'api-key': config.apiKey,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          sender: { name: 'MANILA WINE', email: config.senderEmail },
+          to: [{ email: inquiry.email, name: inquiry.name }],
+          subject: 'Champagne Carbon Allocation Inquiry Received — Manila Wine Concierge',
+          htmlContent: clientAckHtml,
+        }),
+      });
+    } catch (clientErr) {
+      console.warn('Could not send client acknowledgment:', clientErr);
+    }
+
+    // 3. Sync client into Brevo contacts list
+    syncContactToBrevo(inquiry.email, {
+      FIRSTNAME: inquiry.name,
+      SMS: inquiry.phone,
+      CUVEE_INTEREST: inquiry.cuveeInterest,
+    }).catch(() => {});
+
+    return { success: true, messageId: data.messageId };
+  } catch (err: any) {
+    return { success: false, error: err.message || 'Network error dispatching inquiry email.' };
+  }
+}
