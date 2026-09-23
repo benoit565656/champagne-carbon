@@ -76,11 +76,11 @@ export function Footer() {
           <div className="space-y-3">
             <h4 className="font-serif text-xs uppercase tracking-[0.25em] text-white font-semibold">CRAFTSMANSHIP</h4>
             <ul className="space-y-2.5 text-xs">
+              <li><Link href="/how-to-enjoy" className="hover:text-[#c9a24b] transition-colors text-white font-medium">How to Enjoy (The Ritual)</Link></li>
               <li><Link href="/story#37-steps" className="hover:text-[#c9a24b] transition-colors">The 37 Artisanal Steps</Link></li>
               <li><Link href="/story#cellars" className="hover:text-[#c9a24b] transition-colors">Champillon Oak Barrels</Link></li>
               <li><Link href="/story#f1" className="hover:text-[#c9a24b] transition-colors">Formula 1 Podium Legacy</Link></li>
               <li><Link href="/story#monte-carlo" className="hover:text-[#c9a24b] transition-colors">Prince Albert II Monte-Carlo</Link></li>
-              <li><Link href="/story#37-steps" className="hover:text-[#c9a24b] transition-colors">Aerospace Carbon Armor</Link></li>
             </ul>
           </div>
 

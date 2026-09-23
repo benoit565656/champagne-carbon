@@ -112,7 +112,10 @@ export function Header() {
             </div>
 
             {/* Right Navigation */}
-            <div className="hidden lg:flex items-center justify-end space-x-8 xl:space-x-10 flex-1">
+            <div className="hidden lg:flex items-center justify-end space-x-6 xl:space-x-8 flex-1">
+              <Link href="/how-to-enjoy" className="carbon-nav-link text-xs tracking-[0.22em] hover:text-[#c9a24b] transition-colors whitespace-nowrap">
+                HOW TO ENJOY
+              </Link>
               <Link href="/bugatti" className="carbon-nav-link text-xs tracking-[0.22em] hover:text-[#c9a24b] transition-colors">
                 BUGATTI
               </Link>
@@ -147,6 +150,9 @@ export function Header() {
               </Link>
               <Link href="/story" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#c9a24b] py-1 border-b border-white/5">
                 STORY
+              </Link>
+              <Link href="/how-to-enjoy" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#c9a24b] py-1 border-b border-white/5">
+                HOW TO ENJOY
               </Link>
               <Link href="/bugatti" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#c9a24b] py-1 border-b border-white/5">
                 BUGATTI
