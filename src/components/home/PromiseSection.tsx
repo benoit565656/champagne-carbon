@@ -39,7 +39,7 @@ export function PromiseSection() {
   ];
 
   return (
-    <section className="relative min-h-[650px] w-full flex items-center overflow-hidden bg-[#000000] border-b border-white/10">
+    <section className="relative min-h-0 w-full flex items-center overflow-hidden bg-[#000000] border-b border-white/10">
       
       {/* Background Image: Full-Width Woven Carbon Fiber Texture */}
       <div className="absolute inset-0 z-0">
@@ -57,8 +57,8 @@ export function PromiseSection() {
       </div>
 
       {/* Content Grid: Full Width with Refined Side Padding */}
-      <div className="relative z-20 w-full max-w-[1760px] mx-auto px-6 sm:px-12 lg:px-20 py-24 sm:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="relative z-20 w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 py-10 sm:py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography */}
           <div className="lg:col-span-5 space-y-6">

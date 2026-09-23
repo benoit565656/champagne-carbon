@@ -7,11 +7,11 @@ import { Phone, Mail, MapPin, ExternalLink, ShieldCheck } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-[#040404] border-t border-white/10 text-[#a8a49b] text-xs pt-16 pb-12">
-      <div className="w-full max-w-[1760px] mx-auto px-6 sm:px-12 lg:px-20 space-y-16">
+    <footer className="bg-[#040404] border-t border-white/10 text-[#a8a49b] text-xs pt-10 sm:pt-16 pb-8 sm:pb-12">
+      <div className="w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 space-y-10 sm:space-y-16">
         
         {/* Truthful Manila Wine Philippine Premiere Showcase */}
-        <div className="bg-[#0a0a0c] border border-white/10 rounded p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="bg-[#0a0a0c] border border-white/10 rounded p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-[#c9a24b] text-xs tracking-[0.25em] uppercase font-semibold">
               <ShieldCheck className="w-4 h-4" />

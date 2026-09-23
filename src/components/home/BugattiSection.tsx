@@ -34,25 +34,25 @@ export function BugattiSection() {
   };
 
   return (
-    <section className="w-full bg-[#000000] py-24 sm:py-36 border-b border-white/5 relative">
-      <div className="w-full max-w-[1760px] mx-auto px-4 sm:px-8 lg:px-12">
+    <section className="w-full bg-[#000000] py-10 sm:py-20 lg:py-32 border-b border-white/5 relative">
+      <div className="w-full max-w-[1760px] mx-auto px-3 sm:px-8 lg:px-12">
         
         {/* Section Heading matching Champagne Carbon screenshot */}
-        <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-24 space-y-4">
-          <p className="text-[11px] font-serif uppercase tracking-[0.35em] text-[#c9a24b] font-medium">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 lg:mb-24 space-y-3 sm:space-y-4">
+          <p className="text-[10px] sm:text-[11px] font-serif uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#c9a24b] font-medium">
             OFFICIAL AUTOMOTIVE PARTNERSHIP
           </p>
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white tracking-[0.24em] uppercase font-light">
+          <h2 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
             EDITION BUGATTI
           </h2>
-          <div className="w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-4" />
-          <p className="text-xs sm:text-sm text-[#a8a49b] font-light tracking-wider max-w-xl mx-auto pt-2">
+          <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-3 sm:mt-4" />
+          <p className="text-xs sm:text-sm text-[#a8a49b] font-light tracking-wider max-w-xl mx-auto pt-1 sm:pt-2">
             Legendary millésimes celebrating 110 years of Bugatti speed, Chiron 300+ record-breaking aerodynamics, and the extreme Bolide.
           </p>
         </div>
 
         {/* 3 Majestic Columns on Pure Black */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-10 lg:gap-14 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 lg:gap-14 max-w-6xl mx-auto">
           {bugattiProducts.map((product) => {
             const currentVariantIndex = selectedFormats[product.id] || 0;
             const currentVariant = product.variants[currentVariantIndex] || product.variants[0];
@@ -61,12 +61,12 @@ export function BugattiSection() {
             return (
               <div
                 key={product.id}
-                className="group flex flex-col justify-between items-center text-center transition-transform duration-500 hover:-translate-y-1 bg-[#050505] p-6 rounded-xl border border-white/5 hover:border-[#c9a24b]/30"
+                className="group flex flex-col justify-between items-center text-center transition-transform duration-500 hover:-translate-y-1 bg-[#050505] p-4 sm:p-6 rounded-xl border border-white/5 hover:border-[#c9a24b]/30"
               >
                 {/* Large Bottle Presentation with Ambient Glow & Floor Reflection */}
                 <Link
                   href={`/products/${product.slug}`}
-                  className="relative w-full h-[460px] sm:h-[500px] flex items-end justify-center mb-6 overflow-hidden"
+                  className="relative w-full h-[340px] sm:h-[440px] lg:h-[480px] flex items-end justify-center mb-4 sm:mb-6 overflow-hidden"
                 >
                   <Image
                     src={product.images[0]}

@@ -9,8 +9,8 @@ export default function BugattiPage() {
   const bugattiProducts = getBugattiProducts();
 
   return (
-    <div className="bg-carbon-950 text-silver py-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <div className="bg-carbon-950 text-silver py-8 sm:py-16 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
         
         {/* Bugatti Hero Header */}
         <div className="text-center max-w-4xl mx-auto">

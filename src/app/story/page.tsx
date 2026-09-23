@@ -5,8 +5,8 @@ import { Layers, Clock, Trophy, Crown, ArrowRight } from 'lucide-react';
 
 export default function StoryPage() {
   return (
-    <div className="bg-[#050505] text-[#ece9e2] py-20 min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
+    <div className="bg-[#050505] text-[#ece9e2] py-8 sm:py-16 min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-20 lg:space-y-28">
         
         {/* Story Hero */}
         <div className="text-center max-w-3xl mx-auto pt-6">

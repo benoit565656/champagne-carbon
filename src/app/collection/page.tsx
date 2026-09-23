@@ -38,11 +38,11 @@ export default function CollectionPage() {
   };
 
   return (
-    <div className="bg-[#050505] text-[#ece9e2] py-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div className="bg-[#050505] text-[#ece9e2] py-8 sm:py-16 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 space-y-4">
           <p className="font-serif text-xs uppercase tracking-[0.3em] text-[#c9a24b] font-medium">
             OFFICIAL ALLOCATION &bull; CURATED BY MANILA WINE
           </p>

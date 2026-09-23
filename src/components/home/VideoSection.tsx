@@ -4,7 +4,7 @@ import React from 'react';
 
 export function VideoSection() {
   return (
-    <section className="relative min-h-[650px] lg:min-h-[85vh] w-full flex items-center justify-center overflow-hidden bg-[#000000] border-b border-white/10">
+    <section className="relative min-h-[360px] sm:min-h-[500px] lg:min-h-[80vh] w-full flex items-center justify-center overflow-hidden bg-[#000000] border-b border-white/10">
       
       {/* Background Video Element: Autoplay, Muted, Looping */}
       <div className="absolute inset-0 z-0">
@@ -20,8 +20,8 @@ export function VideoSection() {
         </video>
 
         {/* Cinematic Vignette Gradients for seamless integration */}
-        <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#000000] to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#000000] to-transparent z-10" />
+        <div className="absolute inset-x-0 top-0 h-16 sm:h-36 bg-gradient-to-b from-[#000000] to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-16 sm:h-36 bg-gradient-to-t from-[#000000] to-transparent z-10" />
         <div className="absolute inset-0 bg-black/25 z-10" />
       </div>
 

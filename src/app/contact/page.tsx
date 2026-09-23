@@ -44,10 +44,10 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-carbon-950 text-silver py-16 min-h-screen">
+    <div className="bg-carbon-950 text-silver py-8 sm:py-16 min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
           <span className="text-[11px] uppercase tracking-ultra text-gold font-semibold block mb-2">
             MANILA WINE PRIVATE CLIENT CONCIERGE
           </span>
