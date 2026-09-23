@@ -7,6 +7,15 @@ import { Menu, X, ExternalLink, Phone } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -40,7 +49,13 @@ export function Header() {
       </div>
 
       {/* Main Split Navigation: STICKY TOP-0 (Pins directly to top upon scroll) */}
-      <header className="sticky top-0 z-50 w-full bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
+            ? 'bg-[#050505]/98 shadow-[0_4px_25px_rgba(0,0,0,0.85)] border-b border-white/20 backdrop-blur-md'
+            : 'bg-[#050505]/90 border-b border-white/10 backdrop-blur-sm'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
             
@@ -57,14 +72,14 @@ export function Header() {
               </Link>
             </nav>
 
-            {/* Centered Brand Marks: Responsive for Mobile Viewport */}
-            <div className="flex items-center gap-2.5 sm:gap-6 min-w-0">
+            {/* Centered Brand Marks: Responsive for Mobile Viewport with both logos guaranteed visible */}
+            <div className="flex items-center gap-2 sm:gap-4 lg:gap-6 min-w-0">
               {/* 1. Manila Wine Logo */}
               <a
                 href="https://manila-wine.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block w-32 sm:w-48 lg:w-56 h-9 sm:h-14 lg:h-16 hover:opacity-90 transition-opacity flex-shrink-0"
+                className="relative block w-28 sm:w-44 lg:w-56 h-8 sm:h-12 lg:h-14 hover:opacity-90 transition-opacity flex-shrink-0"
                 title="Manila Wine - Official Store"
               >
                 <Image
@@ -77,14 +92,19 @@ export function Header() {
               </a>
 
               {/* Subtle Divider */}
-              <div className="h-6 sm:h-10 w-[1px] bg-white/20 flex-shrink-0"></div>
+              <div className="h-5 sm:h-8 w-[1px] bg-white/25 flex-shrink-0"></div>
 
-              {/* 2. Official Champagne Carbon Logo */}
-              <Link href="/" className="relative block w-22 sm:w-32 lg:w-36 h-7 sm:h-9 lg:h-10 hover:opacity-90 transition-opacity flex-shrink-0">
+              {/* 2. Official Champagne Carbon Logo (Guaranteed width: 96px on mobile, 128px on tablet, 144px on desktop) */}
+              <Link
+                href="/"
+                className="relative block w-24 sm:w-32 lg:w-36 h-7 sm:h-9 lg:h-10 hover:opacity-90 transition-opacity flex-shrink-0"
+                title="Champagne Carbon"
+              >
                 <Image
                   src="/images/carbon/logo-carbon-transparent.png"
                   alt="CHAMPAGNE CARBON"
                   fill
+                  sizes="(max-width: 640px) 96px, 144px"
                   className="object-contain"
                   priority
                 />
@@ -102,7 +122,7 @@ export function Header() {
             </div>
 
             {/* Mobile hamburger (Always fits comfortably inside viewport) */}
-            <div className="lg:hidden flex items-center flex-shrink-0 pl-2">
+            <div className="lg:hidden flex items-center flex-shrink-0 pl-1">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-1.5 text-white hover:text-[#c9a24b] focus:outline-none"
