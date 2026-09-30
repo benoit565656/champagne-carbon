@@ -20,7 +20,12 @@ import {
   Copy,
   Trash2,
   Search,
-  Check
+  Check,
+  DollarSign,
+  Tag,
+  Package,
+  Layers,
+  ArrowUpRight
 } from 'lucide-react';
 
 interface Subscriber {
@@ -32,9 +37,30 @@ interface Subscriber {
   notes?: string;
 }
 
+interface MappedPricingItem {
+  sku: string;
+  magentoId: number;
+  productTitle: string;
+  variantFormat: string;
+  productName: string;
+  slug: string;
+  minisitePrice: number;
+  magentoPrice: number;
+  cost: number;
+  marginPhp: number;
+  marginPct: string;
+  stock: number;
+  inStock: boolean;
+  link: string;
+  presentationType: string;
+  isLuminous: boolean;
+  isAligned: boolean;
+  lastFetchedAt: string | null;
+}
+
 export default function AdminPage() {
   // Navigation
-  const [activeTab, setActiveTab] = useState<'subscribers' | 'dispatcher'>('subscribers');
+  const [activeTab, setActiveTab] = useState<'subscribers' | 'dispatcher' | 'pricing'>('pricing');
 
   // Auth state
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -74,11 +100,61 @@ export default function AdminPage() {
   const [sendingBlast, setSendingBlast] = useState(false);
   const [blastResult, setBlastResult] = useState<any>(null);
 
+  // Pricing & Magento sync state
+  const [pricingItems, setPricingItems] = useState<MappedPricingItem[]>([]);
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
+  const [syncedBy, setSyncedBy] = useState<string | null>(null);
+  const [loadingPrices, setLoadingPrices] = useState(false);
+  const [syncingPrices, setSyncingPrices] = useState(false);
+  const [syncSuccessMsg, setSyncSuccessMsg] = useState<string | null>(null);
+  const [syncErrorMsg, setSyncErrorMsg] = useState<string | null>(null);
+  const [pricingSearch, setPricingSearch] = useState('');
+
   // Check auth on mount
   useEffect(() => {
     fetchBrevoStatus();
     fetchSubscribers();
+    fetchPrices();
   }, []);
+
+  const fetchPrices = async () => {
+    setLoadingPrices(true);
+    try {
+      const res = await fetch('/api/admin/prices');
+      if (res.ok) {
+        const data = await res.json();
+        setPricingItems(data.items || []);
+        setLastSyncedAt(data.lastSyncedAt || null);
+        setSyncedBy(data.syncedBy || null);
+      }
+    } catch (e) {
+      console.error('Error fetching prices:', e);
+    } finally {
+      setLoadingPrices(false);
+    }
+  };
+
+  const handleSyncPrices = async () => {
+    setSyncingPrices(true);
+    setSyncSuccessMsg(null);
+    setSyncErrorMsg(null);
+
+    try {
+      const res = await fetch('/api/admin/sync-prices', { method: 'POST' });
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to sync prices with Magento');
+      }
+
+      setSyncSuccessMsg(`Successfully aligned ${data.updatedCount} Champagne Carbon products with Manila Wine Magento 2 API!`);
+      await fetchPrices();
+    } catch (err: any) {
+      setSyncErrorMsg(err.message || 'Error communicating with Magento API');
+    } finally {
+      setSyncingPrices(false);
+    }
+  };
 
   const fetchBrevoStatus = async (overrideKey?: string) => {
     setLoadingStatus(true);
@@ -138,6 +214,7 @@ export default function AdminPage() {
       setIsAuthenticated(true);
       fetchBrevoStatus();
       fetchSubscribers();
+      fetchPrices();
     } catch (err: any) {
       setLoginError(err.message || 'Error logging in');
     } finally {
@@ -355,11 +432,12 @@ export default function AdminPage() {
               onClick={() => {
                 fetchBrevoStatus(apiKeyOverride);
                 fetchSubscribers();
+                fetchPrices();
               }}
               className="p-2.5 bg-carbon-800 hover:bg-carbon-700 text-silver hover:text-white rounded border border-carbon-border transition-colors"
               title="Refresh All Data"
             >
-              <RefreshCw className={`w-4 h-4 ${loadingStatus || loadingSubscribers ? 'animate-spin text-gold' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ${loadingStatus || loadingSubscribers || loadingPrices || syncingPrices ? 'animate-spin text-gold' : ''}`} />
             </button>
             <button
               onClick={handleLogout}
@@ -372,10 +450,25 @@ export default function AdminPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-carbon-border gap-4">
+        <div className="flex border-b border-carbon-border gap-4 overflow-x-auto">
+          <button
+            onClick={() => setActiveTab('pricing')}
+            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors whitespace-nowrap ${
+              activeTab === 'pricing'
+                ? 'border-gold text-gold font-semibold'
+                : 'border-transparent text-silver-muted hover:text-white'
+            }`}
+          >
+            <DollarSign className="w-4 h-4 text-gold" />
+            <span>Magento Price &amp; Stock Sync</span>
+            <span className="bg-carbon-800 border border-carbon-border text-gold px-2 py-0.5 rounded-full text-[10px]">
+              11 SKUs
+            </span>
+          </button>
+
           <button
             onClick={() => setActiveTab('subscribers')}
-            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors ${
+            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors whitespace-nowrap ${
               activeTab === 'subscribers'
                 ? 'border-gold text-gold'
                 : 'border-transparent text-silver-muted hover:text-white'
@@ -390,7 +483,7 @@ export default function AdminPage() {
 
           <button
             onClick={() => setActiveTab('dispatcher')}
-            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors ${
+            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors whitespace-nowrap ${
               activeTab === 'dispatcher'
                 ? 'border-gold text-gold'
                 : 'border-transparent text-silver-muted hover:text-white'
@@ -919,6 +1012,280 @@ export default function AdminPage() {
                     Rendered with Manila Wine &amp; Champagne Carbon high-fidelity responsive HTML email template.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: MAGENTO PRICE & STOCK SYNC */}
+        {activeTab === 'pricing' && (
+          <div className="space-y-6">
+            {/* Top Info & Sync Trigger Banner */}
+            <div className="bg-carbon-900 border border-carbon-border rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[10px] font-mono text-gold uppercase tracking-wider font-semibold">
+                    MANILA WINE MAGENTO 2.4.3 REST API
+                  </span>
+                  <span className="text-carbon-600">&bull;</span>
+                  <span className="text-[10px] font-mono text-silver-muted">
+                    {lastSyncedAt ? `Last Synced: ${new Date(lastSyncedAt).toLocaleString('en-PH', { timeZone: 'Asia/Manila' })} (Manila Time)` : 'Not yet synced in this session'}
+                  </span>
+                </div>
+                <h2 className="font-serif text-xl sm:text-2xl text-white font-light tracking-wide">
+                  Live Catalog Price &amp; Stock Alignment
+                </h2>
+                <p className="text-xs text-silver-muted max-w-2xl font-light leading-relaxed">
+                  Fetches real-time retail prices, cost basis, and available warehouse inventory directly from Manila Wine Magento 2 for all 11 Champagne Carbon cuvées. Clicking sync will instantly align minisite selling prices and inventory across all sections and pages.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto flex-shrink-0">
+                <button
+                  onClick={fetchPrices}
+                  disabled={loadingPrices || syncingPrices}
+                  className="px-4 py-3 bg-carbon-800 hover:bg-carbon-700 text-silver hover:text-white rounded border border-carbon-border text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  title="Reload currently saved prices"
+                >
+                  <RefreshCw className={`w-3.5 h-3.5 ${loadingPrices ? 'animate-spin text-gold' : ''}`} />
+                  <span>Reload</span>
+                </button>
+
+                <button
+                  onClick={handleSyncPrices}
+                  disabled={syncingPrices}
+                  className="px-6 py-3 bg-gold hover:bg-gold-light text-carbon-950 font-bold text-xs uppercase tracking-luxury rounded transition-all shadow-lg hover:shadow-[0_0_20px_rgba(201,162,75,0.4)] flex items-center justify-center gap-2 disabled:opacity-50 whitespace-nowrap"
+                >
+                  {syncingPrices ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin" />
+                      <span>Syncing Magento API...</span>
+                    </>
+                  ) : (
+                    <>
+                      <DollarSign className="w-4 h-4" />
+                      <span>Sync Prices from Magento Now</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Notification messages */}
+            {syncSuccessMsg && (
+              <div className="p-4 bg-emerald-950/40 border border-emerald-800/80 rounded-lg flex items-center justify-between gap-3 text-emerald-200 text-xs">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{syncSuccessMsg}</span>
+                </div>
+                <button onClick={() => setSyncSuccessMsg(null)} className="text-emerald-400 hover:text-white text-xs font-mono">
+                  &times;
+                </button>
+              </div>
+            )}
+
+            {syncErrorMsg && (
+              <div className="p-4 bg-rose-950/40 border border-rose-800/80 rounded-lg flex items-center justify-between gap-3 text-rose-200 text-xs">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                  <span>{syncErrorMsg}</span>
+                </div>
+                <button onClick={() => setSyncErrorMsg(null)} className="text-rose-400 hover:text-white text-xs font-mono">
+                  &times;
+                </button>
+              </div>
+            )}
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-carbon-900 border border-carbon-border rounded-xl p-5">
+                <p className="text-[11px] uppercase tracking-wider text-silver-muted flex items-center justify-between">
+                  <span>Total Mapped SKUs</span>
+                  <Package className="w-4 h-4 text-gold" />
+                </p>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-3xl font-serif text-white">{pricingItems.length}</span>
+                  <span className="text-xs text-gold">/ 11 Active SKUs</span>
+                </div>
+                <p className="text-[11px] text-silver-dark mt-2">100% Champagne Carbon portfolio</p>
+              </div>
+
+              <div className="bg-carbon-900 border border-carbon-border rounded-xl p-5">
+                <p className="text-[11px] uppercase tracking-wider text-silver-muted flex items-center justify-between">
+                  <span>Price Alignment</span>
+                  <Check className="w-4 h-4 text-emerald-400" />
+                </p>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-3xl font-serif text-emerald-400">
+                    {pricingItems.filter(i => i.isAligned).length}
+                  </span>
+                  <span className="text-xs text-silver-muted">/ {pricingItems.length} Aligned</span>
+                </div>
+                <p className="text-[11px] text-silver-dark mt-2">Minisite price == Magento store price</p>
+              </div>
+
+              <div className="bg-carbon-900 border border-carbon-border rounded-xl p-5">
+                <p className="text-[11px] uppercase tracking-wider text-silver-muted flex items-center justify-between">
+                  <span>Total Manila Stock</span>
+                  <Layers className="w-4 h-4 text-amber-400" />
+                </p>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-3xl font-serif text-white">
+                    {pricingItems.reduce((acc, curr) => acc + (curr.stock || 0), 0)}
+                  </span>
+                  <span className="text-xs text-silver-muted">Bottles On-Hand</span>
+                </div>
+                <p className="text-[11px] text-silver-dark mt-2">Across all 11 format allocations</p>
+              </div>
+
+              <div className="bg-carbon-900 border border-carbon-border rounded-xl p-5">
+                <p className="text-[11px] uppercase tracking-wider text-silver-muted flex items-center justify-between">
+                  <span>API Data Sync</span>
+                  <ShieldCheck className="w-4 h-4 text-gold" />
+                </p>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-xl font-serif text-gold">REST V1 Live</span>
+                </div>
+                <p className="text-[11px] text-silver-dark mt-2">Manila-Wine.com Integration Token</p>
+              </div>
+            </div>
+
+            {/* Inventory Table Container */}
+            <div className="bg-carbon-900 border border-carbon-border rounded-xl overflow-hidden shadow-2xl">
+              <div className="p-4 sm:p-5 border-b border-carbon-border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <Tag className="w-4 h-4 text-gold" />
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+                    All 11 Mapped Champagne Carbon SKUs
+                  </h3>
+                </div>
+
+                <div className="relative w-full sm:w-80">
+                  <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-silver-muted" />
+                  <input
+                    type="text"
+                    placeholder="Search SKU, name, or format..."
+                    value={pricingSearch}
+                    onChange={(e) => setPricingSearch(e.target.value)}
+                    className="w-full bg-carbon-950 border border-carbon-border rounded pl-9 pr-3 py-2 text-xs text-white placeholder-silver-muted focus:border-gold outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr className="border-b border-carbon-border bg-carbon-950/60 text-silver-muted uppercase font-mono text-[10px] tracking-wider">
+                      <th className="py-3 px-4">#</th>
+                      <th className="py-3 px-4">SKU / ID</th>
+                      <th className="py-3 px-4">Cuvée &amp; Format</th>
+                      <th className="py-3 px-4">Type</th>
+                      <th className="py-3 px-4">Minisite Price</th>
+                      <th className="py-3 px-4">Magento Live Price</th>
+                      <th className="py-3 px-4">Cost Basis</th>
+                      <th className="py-3 px-4">Margin</th>
+                      <th className="py-3 px-4">Stock</th>
+                      <th className="py-3 px-4">Status</th>
+                      <th className="py-3 px-4 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-carbon-border/50">
+                    {pricingItems.length === 0 ? (
+                      <tr>
+                        <td colSpan={11} className="py-12 text-center text-silver-muted">
+                          {loadingPrices ? 'Loading pricing data...' : 'No pricing data found. Click "Sync Prices from Magento" to populate.'}
+                        </td>
+                      </tr>
+                    ) : (
+                      pricingItems
+                        .filter(item => {
+                          if (!pricingSearch) return true;
+                          const q = pricingSearch.toLowerCase();
+                          return item.sku.toLowerCase().includes(q) ||
+                                 item.productName.toLowerCase().includes(q) ||
+                                 item.variantFormat.toLowerCase().includes(q) ||
+                                 String(item.magentoId).includes(q);
+                        })
+                        .map((item, idx) => (
+                          <tr key={item.sku} className="hover:bg-carbon-800/40 transition-colors">
+                            <td className="py-3 px-4 text-silver-dark font-mono text-[11px]">{idx + 1}</td>
+                            <td className="py-3 px-4 font-mono text-white text-xs">
+                              <span className="text-gold font-semibold">{item.sku}</span>
+                              <span className="text-silver-dark text-[10px] block">ID: {item.magentoId}</span>
+                            </td>
+                            <td className="py-3 px-4">
+                              <div className="font-serif text-white font-normal text-xs">{item.productTitle}</div>
+                              <div className="text-[11px] text-silver-muted font-mono">{item.variantFormat}</div>
+                            </td>
+                            <td className="py-3 px-4">
+                              {item.isLuminous ? (
+                                <span className="inline-flex items-center gap-1 bg-amber-950/60 border border-amber-800/80 text-amber-300 text-[10px] px-2 py-0.5 rounded font-mono">
+                                  ✨ Luminous
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 bg-carbon-800 border border-carbon-border text-silver-muted text-[10px] px-2 py-0.5 rounded font-mono">
+                                  👑 Handcrafted
+                                </span>
+                              )}
+                            </td>
+                            <td className="py-3 px-4 font-mono font-medium text-white">
+                              ₱{item.minisitePrice.toLocaleString()}
+                            </td>
+                            <td className="py-3 px-4 font-mono font-semibold text-gold">
+                              ₱{item.magentoPrice.toLocaleString()}
+                            </td>
+                            <td className="py-3 px-4 font-mono text-silver-muted">
+                              ₱{item.cost.toLocaleString()}
+                            </td>
+                            <td className="py-3 px-4 font-mono text-emerald-400">
+                              +₱{item.marginPhp.toLocaleString()}
+                              <span className="text-[10px] text-silver-dark block">({item.marginPct}%)</span>
+                            </td>
+                            <td className="py-3 px-4 font-mono">
+                              <span className={`text-xs font-semibold ${item.stock > 0 ? 'text-white' : 'text-rose-400'}`}>
+                                {item.stock} qty
+                              </span>
+                            </td>
+                            <td className="py-3 px-4">
+                              {item.isAligned ? (
+                                <span className="inline-flex items-center gap-1 bg-emerald-950/60 border border-emerald-800/80 text-emerald-300 text-[10px] px-2 py-0.5 rounded">
+                                  <Check className="w-3 h-3" />
+                                  <span>Aligned</span>
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 bg-rose-950/60 border border-rose-800/80 text-rose-300 text-[10px] px-2 py-0.5 rounded">
+                                  <span>Mismatch</span>
+                                </span>
+                              )}
+                            </td>
+                            <td className="py-3 px-4 text-right">
+                              <div className="flex items-center justify-end gap-2">
+                                <a
+                                  href={`/products/${item.slug}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-1 text-silver hover:text-white hover:bg-carbon-700 rounded transition-colors"
+                                  title="View in Minisite"
+                                >
+                                  <Eye className="w-3.5 h-3.5" />
+                                </a>
+                                <a
+                                  href={item.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-1 text-gold hover:text-gold-light hover:bg-carbon-700 rounded transition-colors"
+                                  title="Open in Manila-Wine.com"
+                                >
+                                  <ArrowUpRight className="w-3.5 h-3.5" />
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                    )}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
