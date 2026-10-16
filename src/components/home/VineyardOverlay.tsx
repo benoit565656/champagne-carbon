@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function VineyardOverlay() {
   return (
-    <section className="relative min-h-[460px] sm:min-h-[600px] lg:min-h-[85vh] w-full flex items-center overflow-hidden border-t border-b border-white/10 bg-[#050505]">
+    <section className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-[560px] w-full flex items-center overflow-hidden border-t border-b border-white/10 bg-[#050505]">
       {/* Background Image: Full-Width Cinematic Champagne Vineyards & Church */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ export function VineyardOverlay() {
       </div>
 
       {/* Content Container: Full Width with Refined Side Padding */}
-      <div className="relative z-20 w-full px-4 sm:px-12 lg:px-20 py-12 sm:py-24 lg:py-32">
+      <div className="relative z-20 w-full px-4 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-16">
         <div className="max-w-2xl space-y-4 sm:space-y-6">
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-7xl text-white tracking-[0.14em] uppercase font-light leading-[1.1]">
             NATURE CREATES.<br />

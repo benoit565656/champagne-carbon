@@ -38,7 +38,7 @@ export function PrivateAccessSection() {
   };
 
   return (
-    <section className="w-full bg-[#000000] py-10 sm:py-16 lg:py-24 border-b border-white/10 text-center relative overflow-hidden">
+    <section className="w-full bg-[#000000] py-8 sm:py-12 lg:py-16 border-b border-white/10 text-center relative overflow-hidden">
       {/* Subtle luxury background carbon glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.04)_0,transparent_70%)] pointer-events-none" />
 

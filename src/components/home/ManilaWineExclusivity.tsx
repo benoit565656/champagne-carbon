@@ -4,8 +4,8 @@ import React from 'react';
 
 export function ManilaWineExclusivity() {
   return (
-    <section className="w-full bg-[#000000] py-10 sm:py-20 lg:py-28 border-t border-white/5">
-      <div className="w-full max-w-5xl mx-auto px-4 text-center space-y-4 sm:space-y-5">
+    <section className="w-full bg-[#000000] py-6 sm:py-8 lg:py-10 border-t border-white/5">
+      <div className="w-full max-w-5xl mx-auto px-4 text-center space-y-3 sm:space-y-4">
         <p className="font-serif text-[11px] uppercase tracking-[0.4em] text-[#c9a24b] font-medium">
           THE HOUSE
         </p>

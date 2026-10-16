@@ -35,19 +35,19 @@ export function CuveeShowcase() {
   };
 
   return (
-    <section className="w-full bg-[#000000] py-10 sm:py-20 lg:py-32 border-b border-white/5 relative">
+    <section className="w-full bg-[#000000] pt-6 sm:pt-10 lg:pt-12 pb-10 sm:pb-16 lg:pb-20 border-b border-white/5 relative">
       <div className="w-full max-w-[1760px] mx-auto px-3 sm:px-8 lg:px-12">
         
         {/* Section Heading matching Champagne Carbon style */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 lg:mb-24 space-y-3 sm:space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10 space-y-2.5 sm:space-y-3">
           <p className="text-[10px] sm:text-[11px] font-serif uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#c9a24b] font-medium">
             PHILIPPINE OFFICIAL ALLOCATION
           </p>
-          <h2 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
             THE COLLECTION
           </h2>
-          <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-3 sm:mt-4" />
-          <p className="text-xs sm:text-sm text-[#a8a49b] font-light tracking-wider max-w-xl mx-auto pt-1 sm:pt-2">
+          <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-2 sm:mt-3" />
+          <p className="text-xs sm:text-sm text-[#a8a49b] font-light tracking-wider max-w-xl mx-auto pt-1">
             Signature Grand Cru cuvées available in genuine 37-stage handcrafted carbon fibre and party-illuminated luminous sleeve editions.
           </p>
         </div>

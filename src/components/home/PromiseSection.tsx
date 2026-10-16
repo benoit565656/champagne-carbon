@@ -57,7 +57,7 @@ export function PromiseSection() {
       </div>
 
       {/* Content Grid: Full Width with Refined Side Padding */}
-      <div className="relative z-20 w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 py-10 sm:py-16 lg:py-24">
+      <div className="relative z-20 w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography */}

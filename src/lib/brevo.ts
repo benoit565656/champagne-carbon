@@ -510,6 +510,7 @@ export async function syncContactToBrevo(
       body: JSON.stringify({
         email,
         updateEnabled: true,
+        listIds: [149],
         attributes: {
           SOURCE: 'Champagne Carbon Private Access',
           ...attributes,

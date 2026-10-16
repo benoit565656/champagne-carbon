@@ -14,6 +14,9 @@ export interface Subscriber {
 const ROOT_DB_PATH = path.join(process.cwd(), 'data', 'subscribers.json');
 const TMP_DB_PATH = path.join('/tmp', 'carbon_subscribers.json');
 
+// Memory store for serverless execution
+let memorySubscribers: Subscriber[] | null = null;
+
 function ensureDirectoryExistence(filePath: string) {
   const dirname = path.dirname(filePath);
   if (!fs.existsSync(dirname)) {
@@ -26,11 +29,20 @@ function ensureDirectoryExistence(filePath: string) {
 }
 
 export function getSubscribers(): Subscriber[] {
+  // If we already loaded in memory, return it
+  if (memorySubscribers !== null && memorySubscribers.length > 0) {
+    return memorySubscribers;
+  }
+
   // Try reading from TMP first (most up-to-date in serverless runtime)
   try {
     if (fs.existsSync(TMP_DB_PATH)) {
       const data = fs.readFileSync(TMP_DB_PATH, 'utf-8');
-      return JSON.parse(data);
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) {
+        memorySubscribers = parsed;
+        return parsed;
+      }
     }
   } catch (err) {
     console.error('Error reading TMP_DB_PATH:', err);
@@ -40,16 +52,26 @@ export function getSubscribers(): Subscriber[] {
   try {
     if (fs.existsSync(ROOT_DB_PATH)) {
       const data = fs.readFileSync(ROOT_DB_PATH, 'utf-8');
-      return JSON.parse(data);
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) {
+        memorySubscribers = parsed;
+        return parsed;
+      }
     }
   } catch (err) {
     console.error('Error reading ROOT_DB_PATH:', err);
   }
 
-  return [];
+  if (memorySubscribers === null) {
+    memorySubscribers = [];
+  }
+  return memorySubscribers;
 }
 
 function saveSubscribers(subscribers: Subscriber[]) {
+  // Always update memory first
+  memorySubscribers = [...subscribers];
+
   const json = JSON.stringify(subscribers, null, 2);
 
   // Write to ROOT if possible

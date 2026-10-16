@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function CoffretSection() {
   return (
-    <section className="relative min-h-[480px] sm:min-h-[640px] lg:min-h-[85vh] w-full flex flex-col justify-between overflow-hidden bg-[#000000] border-b border-white/10">
+    <section className="relative min-h-[400px] sm:min-h-[500px] lg:min-h-[620px] w-full flex flex-col justify-between overflow-hidden bg-[#000000] border-b border-white/10">
       
       {/* Background Image: Formula 1 Podium & Ducati Motorsport Heritage */}
       <div className="absolute inset-0 z-0">
@@ -19,24 +19,24 @@ export function CoffretSection() {
           sizes="100vw"
         />
         {/* Cinematic dark gradients top and bottom */}
-        <div className="absolute inset-x-0 top-0 h-32 sm:h-48 bg-gradient-to-b from-black via-black/70 to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-36 sm:h-52 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+        <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-black via-black/70 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
         <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
       {/* Top Center Title */}
-      <div className="relative z-20 w-full pt-10 sm:pt-20 lg:pt-28 text-center px-4">
-        <p className="font-serif text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium mb-3">
+      <div className="relative z-20 w-full pt-8 sm:pt-12 lg:pt-14 text-center px-4">
+        <p className="font-serif text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium mb-2 sm:mb-3">
           FORMULA 1® PODIUM HERITAGE &bull; DUCATI CORSE PARTNERSHIP
         </p>
-        <h2 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
+        <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
           THE CHAMPIONS&apos; RITUAL
         </h2>
-        <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-3 sm:mt-6" />
+        <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-2 sm:mt-4" />
       </div>
 
       {/* Bottom Floating Info & CTA */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto pb-10 sm:pb-20 lg:pb-28 text-center px-4 sm:px-6 space-y-4 sm:space-y-6">
+      <div className="relative z-20 w-full max-w-4xl mx-auto pb-8 sm:pb-12 lg:pb-14 text-center px-4 sm:px-6 space-y-3 sm:space-y-4">
         <p className="font-serif text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium">
           PURE MOTORSPORT DNA
         </p>

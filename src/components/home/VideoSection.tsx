@@ -4,7 +4,7 @@ import React from 'react';
 
 export function VideoSection() {
   return (
-    <section className="relative min-h-[360px] sm:min-h-[500px] lg:min-h-[80vh] w-full flex items-center justify-center overflow-hidden bg-[#000000] border-b border-white/10">
+    <section className="relative min-h-[300px] sm:min-h-[420px] lg:min-h-[55vh] w-full flex items-center justify-center overflow-hidden bg-[#000000] border-b border-white/10">
       
       {/* Background Video Element: Autoplay, Muted, Looping */}
       <div className="absolute inset-0 z-0">
