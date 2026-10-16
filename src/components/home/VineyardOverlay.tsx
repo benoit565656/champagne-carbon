@@ -7,18 +7,20 @@ import Link from 'next/link';
 export function VineyardOverlay() {
   return (
     <section className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-[560px] w-full flex items-center overflow-hidden border-t border-b border-white/10 bg-[#050505]">
-      {/* Background Image: Full-Width Cinematic Champagne Vineyards & Church */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/carbon/vineyard-cinematic.png"
-          alt="Nature creates. Time perfects. Carbon protects."
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
-        {/* Soft gradient on left for high readability while preserving panoramic scenery */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10" />
+      {/* Background Artwork: Full-bleed to the right edge of the screen (Exception) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-7/12 h-full">
+          <Image
+            src="/images/carbon/vineyard-cinematic.png"
+            alt="Nature creates. Time perfects. Carbon protects."
+            fill
+            className="object-cover lg:object-contain object-right"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        {/* Soft gradient on left for high readability while preserving scenery */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent sm:hidden z-10" />
         <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black to-transparent z-10" />
       </div>
 

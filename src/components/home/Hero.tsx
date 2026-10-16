@@ -8,26 +8,29 @@ export function Hero() {
   return (
     <div className="relative w-full bg-[#050505]">
       {/* Main Hero Slide */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full min-h-[78vh] sm:min-h-[84vh] flex flex-col justify-between overflow-hidden">
         
-        {/* Constrained Container matching Header (max-w-7xl mx-auto px-4 sm:px-6 lg:px-8) */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[75vh] sm:min-h-[80vh] flex flex-col justify-between py-6 sm:py-8 lg:py-10">
-          
-          {/* Background Artwork: Anchored inside max-w-7xl frame on desktop */}
-          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-1/2 pointer-events-none z-0">
+        {/* Background Artwork: Full-bleed to the right edge of the screen (Exception) */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-7/12 h-full">
             <Image
               src="/images/carbon/hero-halo-full.png"
               alt="Champagne Carbon Sealed in Carbon Fiber"
               fill
-              className="object-contain object-right"
+              className="object-cover lg:object-contain object-right"
               priority
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="100vw"
             />
-            {/* Subtle mobile overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent sm:hidden z-10" />
           </div>
+          {/* Subtle smooth gradient fade on left and bottom */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-transparent sm:hidden z-10" />
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#050505] to-transparent z-10" />
+        </div>
 
-          {/* Left Hero Content: Inside the max-w-7xl boundary */}
+        {/* Content Container: Aligned with Header (max-w-7xl mx-auto) */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-14 pb-6 sm:pb-8 flex-grow flex flex-col justify-between">
+          
+          {/* Top/Middle Left Copy */}
           <div className="relative z-10 max-w-xl lg:max-w-2xl space-y-3 sm:space-y-4 pt-2 sm:pt-4">
             <p className="font-serif text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#c9a24b] font-medium">
               WHERE PERFORMANCE MEETS CHAMPAGNE.
