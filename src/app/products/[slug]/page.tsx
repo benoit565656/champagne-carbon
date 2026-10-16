@@ -91,26 +91,17 @@ export default function ProductDetailPage() {
             ))}
           </div>
 
-          {/* Main Bottle View with Strong Backlight Glow */}
+          {/* Main Bottle View with Single Centered Backlight Glow */}
           <div className="carbon-pdp-main-image relative overflow-hidden">
-            {/* Strong Luxury Backlight Glow */}
+            {/* Only 1 Glow: Smaller & Centered Behind the Bottle */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
               <div
-                className={`w-72 sm:w-96 h-[500px] sm:h-[580px] rounded-full blur-3xl opacity-85 ${
+                className={`w-44 sm:w-56 h-72 sm:h-96 rounded-full blur-2xl opacity-65 ${
                   product.id === 'carbon-rose'
-                    ? 'bg-[radial-gradient(ellipse_at_center,rgba(235,100,140,0.5)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                    ? 'bg-[radial-gradient(circle_at_center,rgba(235,100,140,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
                     : product.category === 'bugatti'
-                    ? 'bg-[radial-gradient(ellipse_at_center,rgba(0,102,204,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
-                    : 'bg-[radial-gradient(ellipse_at_center,rgba(201,162,75,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
-                }`}
-              />
-              <div
-                className={`w-44 sm:w-60 h-80 sm:h-96 rounded-full blur-xl opacity-90 ${
-                  product.id === 'carbon-rose'
-                    ? 'bg-[radial-gradient(circle_at_center,rgba(255,140,175,0.65)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
-                    : product.category === 'bugatti'
-                    ? 'bg-[radial-gradient(circle_at_center,rgba(64,158,255,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
-                    : 'bg-[radial-gradient(circle_at_center,rgba(240,210,130,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                    ? 'bg-[radial-gradient(circle_at_center,rgba(0,102,204,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
+                    : 'bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.5)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
                 }`}
               />
             </div>

@@ -63,24 +63,21 @@ export function BugattiSection() {
                 key={product.id}
                 className="group flex flex-col justify-between items-center text-center transition-transform duration-500 hover:-translate-y-1 bg-[#050505] p-4 sm:p-6 rounded-xl border border-white/5 hover:border-[#c9a24b]/30"
               >
-                {/* Large Bottle Presentation with Strong Ambient Glow & Floor Reflection */}
+                {/* Large Bottle Presentation with Single Centered Backlight Glow */}
                 <Link
                   href={`/products/${product.slug}`}
-                  className="relative w-full h-[380px] sm:h-[480px] lg:h-[520px] flex items-end justify-center mb-3 sm:mb-4 overflow-hidden"
+                  className="relative w-full h-[380px] sm:h-[480px] lg:h-[520px] flex items-end justify-center mb-3 sm:mb-4 pt-4 sm:pt-6"
                 >
-                  {/* Strong Bugatti Racing Blue & Carbon Gold Backlight Glow */}
+                  {/* Only 1 Glow: Smaller & Centered Behind the Bottle */}
                   <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                    {/* Outer ambient aura */}
-                    <div className="w-64 sm:w-72 h-[380px] sm:h-[450px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,102,204,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)] blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
-                    {/* High-intensity electric core */}
-                    <div className="w-36 sm:w-44 h-72 sm:h-88 rounded-full bg-[radial-gradient(circle_at_center,rgba(64,158,255,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)] blur-xl opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="w-36 sm:w-44 h-60 sm:h-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,102,204,0.5)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)] blur-2xl opacity-65 group-hover:opacity-80 transition-opacity duration-500" />
                   </div>
                   <Image
                     key={currentVariant.sku}
                     src={currentVariant.image || product.images[0]}
                     alt={`${product.title} - ${currentVariant.format}`}
                     fill
-                    className="object-contain object-bottom group-hover:scale-105 transition-all duration-500 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]"
+                    className="object-contain object-bottom group-hover:scale-[1.02] transition-all duration-500 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority
                   />
