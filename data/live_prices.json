@@ -1,128 +1,128 @@
 {
-  "lastSyncedAt": "2026-09-30T09:03:00.000Z",
+  "lastSyncedAt": "2026-10-16T07:06:32.526Z",
   "syncedBy": "admin",
   "skuCount": 11,
   "skus": {
     "Product16903": {
       "sku": "Product16903",
       "magentoId": 16903,
-      "name": "Champagne Carbon Brut – Handcrafted Carbon Fibre Bottle 750ml",
-      "price": 31250,
+      "name": "Champagne Carbon Brut – Handcrafted Carbon Fibre Bottle - 750ml",
+      "price": 36000,
       "cost": 25000,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-brut-handcrafted-carbon-fibre-bottle-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:21.075Z"
     },
     "Product16917": {
       "sku": "Product16917",
       "magentoId": 16917,
-      "name": "Champagne Carbon Rosé – Handcrafted Carbon Fibre Bottle 750ml",
-      "price": 40000,
+      "name": "Champagne Carbon Rosé – Handcrafted Carbon Fibre Bottle - 750ml",
+      "price": 46000,
       "cost": 32000,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-rose-handcrafted-carbon-fibre-bottle-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:21.824Z"
     },
     "Product16918": {
       "sku": "Product16918",
       "magentoId": 16918,
-      "name": "Champagne Carbon x Bugatti EB02 Vintage 2006 – Handcrafted Carbon Fibre Bottle 750ml",
-      "price": 36875,
+      "name": "Champagne Carbon x Bugatti EB02 Vintage 2006 – Handcrafted Carbon Fibre Bottle - 750ml",
+      "price": 42000,
       "cost": 29500,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-x-bugatti-eb02-vintage-2006-handcrafted-carbon-fibre-bottle-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:22.927Z"
     },
     "Product16919": {
       "sku": "Product16919",
       "magentoId": 16919,
-      "name": "Champagne Carbon x Bugatti EB03 Blanc de Blancs Vintage 2017 – Handcrafted Carbon Fibre Bottle 750ml",
-      "price": 37500,
+      "name": "Champagne Carbon x Bugatti EB03 Blanc de Blancs Vintage 2017 – Handcrafted Carbon Fibre Bottle - 750ml",
+      "price": 43000,
       "cost": 30000,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-x-bugatti-eb03-blanc-de-blancs-vintage-2017-handcrafted-carbon-fibre-bottle-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:23.283Z"
     },
     "Product16920": {
       "sku": "Product16920",
       "magentoId": 16920,
-      "name": "Champagne Carbon Brut Luminous – Carbon-Look Sleeve Magnum 1.5L",
-      "price": 36875,
+      "name": "Champagne Carbon Brut Luminous – Carbon-Look Sleeve Magnum - 1.5L",
+      "price": 42000,
       "cost": 29500,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-brut-luminous-carbon-look-sleeve-magnum-1-5l",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:23.651Z"
     },
     "Product16921": {
       "sku": "Product16921",
       "magentoId": 16921,
       "name": "Champagne Carbon Rosé Luminous – Carbon-Look Sleeve Magnum 1.5L",
-      "price": 42500,
+      "price": 49000,
       "cost": 34000,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-rose-luminous-carbon-look-sleeve-magnum-1-5l",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:23.975Z"
     },
     "Product16922": {
       "sku": "Product16922",
       "magentoId": 16922,
-      "name": "Champagne Carbon x Bugatti EB01 Vintage 2002 Luminous – Carbon-Look Sleeve 750ml",
-      "price": 28750,
+      "name": "Champagne Carbon x Bugatti EB01 Vintage 2002 Luminous – Carbon-Look Sleeve - 750ml",
+      "price": 33000,
       "cost": 23000,
       "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-x-bugatti-eb01-vintage-2002-luminous-carbon-look-sleeve-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:24.333Z"
     },
     "Product16923": {
       "sku": "Product16923",
       "magentoId": 16923,
       "name": "Champagne Carbon Gold Vintage 2015 Luminous – Carbon-Look Sleeve 750ml",
-      "price": 27500,
+      "price": 31000,
       "cost": 22000,
-      "qty": 2,
+      "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-gold-vintage-2015-luminous-carbon-look-sleeve-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:24.678Z"
     },
     "Product16924": {
       "sku": "Product16924",
       "magentoId": 16926,
-      "name": "Champagne Carbon x Bugatti EB01 Vintage 2002 – Handcrafted Carbon Fibre Bottle 750ml",
-      "price": 36875,
+      "name": "Champagne Carbon x Bugatti EB01 Vintage 2002 – Handcrafted Carbon Fibre Bottle - 750ml",
+      "price": 42000,
       "cost": 29500,
-      "qty": 4,
+      "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-x-bugatti-eb01-vintage-2002-handcrafted-carbon-fibre-bottle-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:25.040Z"
     },
     "Product16925": {
       "sku": "Product16925",
       "magentoId": 16927,
       "name": "Champagne Carbon Rosé Luminous – Carbon-Look Sleeve 750ml",
-      "price": 26250,
+      "price": 30000,
       "cost": 21000,
-      "qty": 9,
+      "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-rose-luminous-carbon-look-sleeve-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:25.357Z"
     },
     "Product16926": {
       "sku": "Product16926",
       "magentoId": 16928,
       "name": "Champagne Carbon Brut Luminous – Carbon-Look Sleeve 750ml",
-      "price": 23500,
+      "price": 27000,
       "cost": 18800,
-      "qty": 10,
+      "qty": 1,
       "inStock": true,
-      "urlKey": "champagne-carbon-brut-luminous-carbon-look-sleeve-750ml",
-      "lastFetchedAt": "2026-09-30T09:03:00.000Z"
+      "urlKey": "",
+      "lastFetchedAt": "2026-10-16T07:06:25.723Z"
     }
   }
 }

@@ -6,27 +6,31 @@ import Link from 'next/link';
 
 export function CoffretSection() {
   return (
-    <section className="relative min-h-[460px] sm:min-h-[600px] lg:min-h-[85vh] w-full flex flex-col justify-between overflow-hidden bg-[#000000] border-b border-white/10">
+    <section className="relative min-h-[480px] sm:min-h-[640px] lg:min-h-[85vh] w-full flex flex-col justify-between overflow-hidden bg-[#000000] border-b border-white/10">
       
-      {/* Background Image: Full-Width Lacquered Casket on Black Marble */}
+      {/* Background Image: Formula 1 Podium & Ducati Motorsport Heritage */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/carbon/coffret-signature-full.png"
-          alt="Signature Case Champagne Carbon"
+          src="/images/carbon/motorsport-podium-f1-ducati.jpg"
+          alt="Formula 1 and Ducati Motorsport Podium Heritage Champagne Carbon"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center scale-105 transition-transform duration-1000"
           priority
           sizes="100vw"
         />
-        {/* Subtle dark vignette at top and bottom to seamlessly integrate */}
-        <div className="absolute inset-x-0 top-0 h-28 sm:h-40 bg-gradient-to-b from-black via-black/60 to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-28 sm:h-40 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+        {/* Cinematic dark gradients top and bottom */}
+        <div className="absolute inset-x-0 top-0 h-32 sm:h-48 bg-gradient-to-b from-black via-black/70 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-36 sm:h-52 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
       {/* Top Center Title */}
       <div className="relative z-20 w-full pt-10 sm:pt-20 lg:pt-28 text-center px-4">
+        <p className="font-serif text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium mb-3">
+          FORMULA 1® PODIUM HERITAGE &bull; DUCATI CORSE PARTNERSHIP
+        </p>
         <h2 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
-          SIGNATURE CASE
+          THE CHAMPIONS&apos; RITUAL
         </h2>
         <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-3 sm:mt-6" />
       </div>
@@ -34,17 +38,17 @@ export function CoffretSection() {
       {/* Bottom Floating Info & CTA */}
       <div className="relative z-20 w-full max-w-4xl mx-auto pb-10 sm:pb-20 lg:pb-28 text-center px-4 sm:px-6 space-y-4 sm:space-y-6">
         <p className="font-serif text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium">
-          EXCEPTIONAL PRESENTATION
+          PURE MOTORSPORT DNA
         </p>
-        <p className="text-xs sm:text-sm text-[#ece9e2]/85 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
-          Engineered to house the world&apos;s most exceptional champagnes. Each lacquer-finished presentation casket features pure carbon-fiber reinforcement, brass detailing, and bespoke velour cradling.
+        <p className="text-xs sm:text-sm text-[#ece9e2]/90 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
+          Born on the world&apos;s most coveted podiums. Champagne Carbon made motorsport history as the Official Champagne of Formula 1®, sprayed by racing legends from Monaco to Silverstone. Encased in genuine aerospace carbon-fiber weave inspired by Grand Prix single-seaters and Ducati Corse superbikes, Carbon embodies the ultimate fusion of precision engineering and victory.
         </p>
         <div>
           <Link
             href="/collection"
             className="inline-block border border-[#c9a24b] text-[#c9a24b] hover:bg-[#c9a24b] hover:text-black transition-all duration-300 px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:shadow-[0_0_25px_rgba(201,162,75,0.4)]"
           >
-            DISCOVER THE COLLECTION
+            EXPLORE THE CUVÉES
           </Link>
         </div>
       </div>

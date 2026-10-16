@@ -28,13 +28,13 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '92 Points — Decanter World Wine Awards'
     },
     images: [
-      '/images/bottles/carbon-brut-1.png',
+      '/images/bottles/Product16926.png',
+      '/images/bottles/Product16903.png',
+      '/images/bottles/Product16920.png',
       '/images/bottles/carbon-brut-2.png',
       '/images/bottles/carbon-brut-3.png',
       '/images/bottles/carbon-brut-4.png',
-      '/images/bottles/carbon-brut-5.png',
-      '/images/bottles/carbon-brut-6.png',
-      '/images/bottles/carbon-brut-7.png'
+      '/images/bottles/carbon-brut-5.png'
     ],
     variants: [
       {
@@ -45,11 +45,12 @@ export const PRODUCTS: Product[] = [
         productName: 'Champagne Carbon Brut Luminous – Carbon-Look Sleeve 750ml',
         costPhp: 18800,
         pricePhp: 27000,
-        stock: 10,
+        stock: 1,
         link: 'https://manila-wine.com/carbon-sleeve-brut-luminous-750ml-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16926.png'
       },
       {
         format: 'Luminous Sleeve Magnum 1.5L',
@@ -63,7 +64,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-sleeve-brut-luminous-1-5l-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16920.png'
       },
       {
         format: 'Handcrafted 750ml',
@@ -77,7 +79,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-hand-made-brut-champagne',
         presentationType: 'handcrafted-carbon',
         isLuminous: false,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16903.png'
       }
     ]
   },
@@ -109,13 +112,13 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '93 Points — Gilbert & Gaillard International Challenge'
     },
     images: [
-      '/images/bottles/carbon-rose-1.png',
+      '/images/bottles/Product16925.png',
+      '/images/bottles/Product16917.png',
+      '/images/bottles/Product16921.png',
       '/images/bottles/carbon-rose-2.png',
       '/images/bottles/carbon-rose-3.png',
       '/images/bottles/carbon-rose-4.png',
-      '/images/bottles/carbon-rose-5.png',
-      '/images/bottles/carbon-rose-6.png',
-      '/images/bottles/carbon-rose-7.png'
+      '/images/bottles/carbon-rose-5.png'
     ],
     variants: [
       {
@@ -126,11 +129,12 @@ export const PRODUCTS: Product[] = [
         productName: 'Champagne Carbon Rosé Luminous – Carbon-Look Sleeve 750ml',
         costPhp: 21000,
         pricePhp: 30000,
-        stock: 9,
+        stock: 1,
         link: 'https://manila-wine.com/carbon-sleeve-rose-luminous-750ml-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16925.png'
       },
       {
         format: 'Luminous Sleeve Magnum 1.5L',
@@ -144,7 +148,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-sleeve-rose-luminous-1-5l-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16921.png'
       },
       {
         format: 'Handcrafted 750ml',
@@ -158,7 +163,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-hand-made-rose-champagne',
         presentationType: 'handcrafted-carbon',
         isLuminous: false,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16917.png'
       }
     ]
   },
@@ -190,8 +196,8 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '95 Points — International Sommelier Review'
     },
     images: [
-      '/images/bottles/eb-01-bugatti-vintage-2002-1.png',
-      '/images/bottles/eb-01-bugatti-vintage-2002-2.jpg',
+      '/images/bottles/Product16922.png',
+      '/images/bottles/Product16924.png',
       '/images/bottles/eb-01-bugatti-vintage-2002-3.png',
       '/images/bottles/eb-01-bugatti-vintage-2002-4.png',
       '/images/bottles/eb-01-bugatti-vintage-2002-5.png',
@@ -210,7 +216,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-sleeve-bugatti-eb01-luminous-2017-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16922.png'
       },
       {
         format: 'Handcrafted 750ml',
@@ -220,11 +227,12 @@ export const PRODUCTS: Product[] = [
         productName: 'Champagne Carbon x Bugatti EB01 Vintage 2002 – Handcrafted Carbon Fibre Bottle 750ml',
         costPhp: 29500,
         pricePhp: 42000,
-        stock: 4,
+        stock: 1,
         link: 'https://manila-wine.com/carbon-hand-made-bugatti-eb01-2002-champagne',
         presentationType: 'handcrafted-carbon',
         isLuminous: false,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16924.png'
       }
     ]
   },
@@ -256,13 +264,10 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '94 Points — Andreas Larsson'
     },
     images: [
-      '/images/bottles/chiron-300-vintage-2006-1.png',
+      '/images/bottles/Product16918.png',
       '/images/bottles/chiron-300-vintage-2006-2.png',
-      '/images/bottles/chiron-300-vintage-2006-3.jpg',
       '/images/bottles/chiron-300-vintage-2006-4.png',
-      '/images/bottles/chiron-300-vintage-2006-5.png',
-      '/images/bottles/chiron-300-vintage-2006-6.png',
-      '/images/bottles/chiron-300-vintage-2006-7.png'
+      '/images/bottles/chiron-300-vintage-2006-5.png'
     ],
     variants: [
       {
@@ -277,7 +282,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-hand-made-bugatti-eb02-2006-champagne',
         presentationType: 'handcrafted-carbon',
         isLuminous: false,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16918.png'
       }
     ]
   },
@@ -309,13 +315,10 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '91 Points — Andreas Larsson (Best Sommelier of the World)'
     },
     images: [
-      '/images/bottles/bolide-vintage-2017-1.png',
+      '/images/bottles/Product16919.png',
       '/images/bottles/bolide-vintage-2017-2.png',
-      '/images/bottles/bolide-vintage-2017-3.jpg',
       '/images/bottles/bolide-vintage-2017-4.png',
-      '/images/bottles/bolide-vintage-2017-5.png',
-      '/images/bottles/bolide-vintage-2017-6.png',
-      '/images/bottles/bolide-vintage-2017-7.png'
+      '/images/bottles/bolide-vintage-2017-5.png'
     ],
     variants: [
       {
@@ -330,7 +333,8 @@ export const PRODUCTS: Product[] = [
         link: 'https://manila-wine.com/carbon-hand-made-bugatti-eb03-blanc-de-blancs-2017-champagne',
         presentationType: 'handcrafted-carbon',
         isLuminous: false,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16919.png'
       }
     ]
   },
@@ -362,13 +366,10 @@ export const PRODUCTS: Product[] = [
       scoreAwards: '93 Points — International Wine Challenge'
     },
     images: [
-      '/images/bottles/blanc-de-blancs-grand-cru-2019-1.png',
+      '/images/bottles/Product16923.png',
       '/images/bottles/blanc-de-blancs-grand-cru-2019-2.png',
       '/images/bottles/blanc-de-blancs-grand-cru-2019-3.png',
-      '/images/bottles/blanc-de-blancs-grand-cru-2019-4.png',
-      '/images/bottles/blanc-de-blancs-grand-cru-2019-5.png',
-      '/images/bottles/blanc-de-blancs-grand-cru-2019-6.png',
-      '/images/bottles/blanc-de-blancs-grand-cru-2019-7.png'
+      '/images/bottles/blanc-de-blancs-grand-cru-2019-4.png'
     ],
     variants: [
       {
@@ -379,11 +380,12 @@ export const PRODUCTS: Product[] = [
         productName: 'Champagne Carbon Gold Vintage 2015 Luminous – Carbon-Look Sleeve 750ml',
         costPhp: 22000,
         pricePhp: 31000,
-        stock: 2,
+        stock: 1,
         link: 'https://manila-wine.com/carbon-sleeve-gold-luminous-2015-champagne',
         presentationType: 'carbon-sleeve-luminous',
         isLuminous: true,
-        available: true
+        available: true,
+        image: '/images/bottles/Product16923.png'
       }
     ]
   }

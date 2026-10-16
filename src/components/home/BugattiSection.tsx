@@ -68,11 +68,16 @@ export function BugattiSection() {
                   href={`/products/${product.slug}`}
                   className="relative w-full h-[340px] sm:h-[440px] lg:h-[480px] flex items-end justify-center mb-4 sm:mb-6 overflow-hidden"
                 >
+                  {/* Bugatti Racing Blue & Carbon Gold ambient glow behind transparent bottle */}
+                  <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                    <div className="w-48 h-80 sm:w-64 sm:h-96 rounded-full bg-gradient-to-t from-[#0066cc]/15 via-[#c9a24b]/8 to-transparent blur-2xl" />
+                  </div>
                   <Image
-                    src={product.images[0]}
-                    alt={product.title}
+                    key={currentVariant.sku}
+                    src={currentVariant.image || product.images[0]}
+                    alt={`${product.title} - ${currentVariant.format}`}
                     fill
-                    className="object-contain object-bottom group-hover:scale-105 transition-transform duration-700 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)]"
+                    className="object-contain object-bottom group-hover:scale-105 transition-all duration-500 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority
                   />

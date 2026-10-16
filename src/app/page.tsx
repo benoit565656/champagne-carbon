@@ -31,7 +31,7 @@ export default function HomePage() {
       {/* 6. Recognition Strip: Gilbert & Gaillard Double Gold + Bugatti, Lamborghini, Zephalto */}
       <RecognitionStrip />
 
-      {/* 7. Signature Case: Full-Width Lacquered Casket on Black Marble */}
+      {/* 7. Motorsport Heritage: Formula 1 Podium & Ducati Corse */}
       <CoffretSection />
 
       {/* 8. Video Background: High-Res Looping Video of Carbon Craftsmanship */}

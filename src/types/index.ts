@@ -14,6 +14,7 @@ export interface ProductVariant {
   presentationType: PresentationType;
   isLuminous: boolean;
   available: boolean;
+  image?: string;
 }
 
 export interface Product {

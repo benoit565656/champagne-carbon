@@ -10,50 +10,98 @@ export interface LivePriceStore {
   skus: Record<string, SyncedSkuData>;
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const PRICES_FILE = path.join(DATA_DIR, 'live_prices.json');
+// Global in-memory cache to guarantee persistence across serverless invocations within the same container
+let memoryPriceStore: LivePriceStore | null = null;
 
-/**
- * Read the current live prices store from data/live_prices.json
- */
-export function getLivePriceStore(): LivePriceStore | null {
-  try {
-    if (!fs.existsSync(PRICES_FILE)) {
-      return null;
-    }
-    const raw = fs.readFileSync(PRICES_FILE, 'utf-8');
-    return JSON.parse(raw) as LivePriceStore;
-  } catch (err) {
-    console.warn('[Pricing] Could not read live_prices.json:', err);
-    return null;
+function getCandidateFilePaths(): string[] {
+  const paths: string[] = [];
+  
+  // On Vercel or AWS Lambda Linux containers, /tmp is always writable
+  if (process.platform === 'linux' || process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    paths.push('/tmp/live_prices.json');
   }
+
+  // Standard project path
+  paths.push(path.join(process.cwd(), 'data', 'live_prices.json'));
+  
+  // Fallback to OS temp directory (works on Windows & Linux)
+  const osTmp = process.env.TEMP || process.env.TMP || '/tmp';
+  const tmpPath = path.join(osTmp, 'live_prices.json');
+  if (!paths.includes(tmpPath)) {
+    paths.push(tmpPath);
+  }
+
+  return paths;
 }
 
 /**
- * Persist synced Magento prices to data/live_prices.json
+ * Read the current live prices store from in-memory cache, /tmp, or data/live_prices.json
+ */
+export function getLivePriceStore(): LivePriceStore | null {
+  if (memoryPriceStore) {
+    return memoryPriceStore;
+  }
+
+  const candidatePaths = getCandidateFilePaths();
+
+  for (const filePath of candidatePaths) {
+    try {
+      if (fs.existsSync(filePath)) {
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        const parsed = JSON.parse(raw) as LivePriceStore;
+        if (parsed && parsed.skus) {
+          memoryPriceStore = parsed;
+          return memoryPriceStore;
+        }
+      }
+    } catch (err) {
+      // Continue searching next candidate path
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Persist synced Magento prices safely (in-memory + filesystem with EROFS protection)
  */
 export function saveLivePriceStore(
   syncedSkus: Record<string, SyncedSkuData>,
   syncedBy = 'admin'
 ): LivePriceStore {
-  try {
-    if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true });
+  const store: LivePriceStore = {
+    lastSyncedAt: new Date().toISOString(),
+    syncedBy,
+    skuCount: Object.keys(syncedSkus).length,
+    skus: syncedSkus
+  };
+
+  // Always update memory store immediately
+  memoryPriceStore = store;
+
+  const candidatePaths = getCandidateFilePaths();
+
+  let savedToFile = false;
+  for (const filePath of candidatePaths) {
+    try {
+      const dir = path.dirname(filePath);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      fs.writeFileSync(filePath, JSON.stringify(store, null, 2), 'utf-8');
+      savedToFile = true;
+      break; // Successfully saved to writable path
+    } catch (err: any) {
+      // If EROFS (read-only file system) or EACCES, skip and try next path (e.g. /tmp)
+      console.warn(`[Pricing] Could not write to ${filePath} (${err.code || err.message}). Attempting next storage target...`);
     }
-
-    const store: LivePriceStore = {
-      lastSyncedAt: new Date().toISOString(),
-      syncedBy,
-      skuCount: Object.keys(syncedSkus).length,
-      skus: syncedSkus
-    };
-
-    fs.writeFileSync(PRICES_FILE, JSON.stringify(store, null, 2), 'utf-8');
-    return store;
-  } catch (err) {
-    console.error('[Pricing] Failed to write live_prices.json:', err);
-    throw err;
   }
+
+  if (!savedToFile) {
+    console.warn('[Pricing] Could not persist to disk, retained safely in memory store.');
+  }
+
+  return store;
 }
 
 /**

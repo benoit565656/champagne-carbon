@@ -67,11 +67,26 @@ export async function POST(req: Request) {
       );
     }
 
-    // 2. Persist to data/live_prices.json
-    const store = saveLivePriceStore(syncedData, 'admin');
+    // 2. Persist to storage (in-memory + /tmp or data directory)
+    let store: any;
+    try {
+      store = saveLivePriceStore(syncedData, 'admin');
+    } catch (saveErr: any) {
+      console.warn('[sync-prices] saveLivePriceStore caught:', saveErr?.message);
+      store = {
+        lastSyncedAt: new Date().toISOString(),
+        syncedBy: 'admin',
+        skuCount: fetchedCount,
+        skus: syncedData
+      };
+    }
 
-    // 3. Update src/data/products.ts permanently
-    updateProductsDataFile(syncedData);
+    // 3. Update src/data/products.ts permanently if in local dev
+    try {
+      updateProductsDataFile(syncedData);
+    } catch (updateErr: any) {
+      console.warn('[sync-prices] updateProductsDataFile caught:', updateErr?.message);
+    }
 
     // 4. Build response array
     const updatedItems = Object.values(syncedData).map((p) => {

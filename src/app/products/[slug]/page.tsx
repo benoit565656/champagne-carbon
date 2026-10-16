@@ -45,6 +45,17 @@ export default function ProductDetailPage() {
   const isHandcrafted = currentVariant.presentationType === 'handcrafted-carbon';
   const presInfo = PRESENTATION_DETAILS[currentVariant.presentationType];
 
+  // Dynamic gallery list with currently selected variant's bottle as the primary view
+  const galleryImages = [
+    currentVariant.image || product.images[0],
+    ...product.images.filter(img => img !== (currentVariant.image || product.images[0]))
+  ];
+
+  const handleVariantSelect = (idx: number) => {
+    setSelectedVariantIndex(idx);
+    setSelectedImageIndex(0); // Reset to primary bottle image for the newly selected presentation
+  };
+
   return (
     <div className="bg-[#050505] text-[#ece9e2] min-h-screen">
       
@@ -64,9 +75,9 @@ export default function ProductDetailPage() {
           
           {/* Thumbnails strip */}
           <div className="carbon-pdp-thumbnails">
-            {product.images.map((img, idx) => (
+            {galleryImages.map((img, idx) => (
               <button
-                key={idx}
+                key={`${img}-${idx}`}
                 onClick={() => setSelectedImageIndex(idx)}
                 className={`carbon-pdp-thumb ${selectedImageIndex === idx ? 'active' : ''}`}
               >
@@ -81,12 +92,17 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Main Bottle View */}
-          <div className="carbon-pdp-main-image">
+          <div className="carbon-pdp-main-image relative overflow-hidden">
+            {/* Luxury soft radial spotlight glow behind transparent bottle */}
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+              <div className="w-72 h-[480px] rounded-full bg-gradient-to-t from-[#c9a24b]/12 via-[#c9a24b]/4 to-transparent blur-3xl" />
+            </div>
             <Image
-              src={product.images[selectedImageIndex] || product.images[0]}
-              alt={product.title}
+              key={`${currentVariant.sku}-${selectedImageIndex}`}
+              src={galleryImages[selectedImageIndex] || galleryImages[0]}
+              alt={`${product.title} - ${currentVariant.format}`}
               fill
-              className="object-contain p-8 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)]"
+              className="object-contain p-8 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)] transition-all duration-500"
               priority
             />
           </div>
@@ -182,7 +198,7 @@ export default function ProductDetailPage() {
               {product.variants.map((v, idx) => (
                 <button
                   key={v.sku}
-                  onClick={() => setSelectedVariantIndex(idx)}
+                  onClick={() => handleVariantSelect(idx)}
                   className={`carbon-format-btn p-3 flex flex-col items-center justify-center text-center ${selectedVariantIndex === idx ? 'active' : ''}`}
                 >
                   <span className="block font-medium text-xs text-white">{v.format}</span>
