@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin, ExternalLink, ShieldCheck } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="bg-[#040404] border-t border-white/10 text-[#a8a49b] text-xs pt-10 sm:pt-16 pb-8 sm:pb-12">
-      <div className="w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 space-y-10 sm:space-y-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
         
         {/* Truthful Manila Wine Philippine Premiere Showcase */}
         <div className="bg-[#0a0a0c] border border-white/10 rounded p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">

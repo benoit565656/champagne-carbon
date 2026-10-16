@@ -22,8 +22,8 @@ export function VineyardOverlay() {
         <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black to-transparent z-10" />
       </div>
 
-      {/* Content Container: Full Width with Refined Side Padding */}
-      <div className="relative z-20 w-full px-4 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-16">
+      {/* Content Container: Constrained to max-w-7xl matching Header */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="max-w-2xl space-y-4 sm:space-y-6">
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-7xl text-white tracking-[0.14em] uppercase font-light leading-[1.1]">
             NATURE CREATES.<br />

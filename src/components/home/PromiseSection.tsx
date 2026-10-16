@@ -56,8 +56,8 @@ export function PromiseSection() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
       </div>
 
-      {/* Content Grid: Full Width with Refined Side Padding */}
-      <div className="relative z-20 w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-14">
+      {/* Content Grid: Constrained to max-w-7xl matching Header */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography */}

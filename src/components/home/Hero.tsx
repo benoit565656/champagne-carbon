@@ -7,31 +7,28 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <div className="relative w-full bg-[#050505]">
-      {/* Main Hero Slide (Screenshot 1) */}
-      <section className="relative min-h-[78vh] sm:min-h-[84vh] w-full flex flex-col justify-between overflow-hidden">
+      {/* Main Hero Slide */}
+      <section className="relative w-full overflow-hidden">
         
-        {/* Background Artwork: Authentic High-Res Carbon Luminous Halo */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/75 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full">
+        {/* Constrained Container matching Header (max-w-7xl mx-auto px-4 sm:px-6 lg:px-8) */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[75vh] sm:min-h-[80vh] flex flex-col justify-between py-6 sm:py-8 lg:py-10">
+          
+          {/* Background Artwork: Anchored inside max-w-7xl frame on desktop */}
+          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-1/2 pointer-events-none z-0">
             <Image
               src="/images/carbon/hero-halo-full.png"
               alt="Champagne Carbon Sealed in Carbon Fiber"
               fill
-              className="object-cover lg:object-contain object-right"
+              className="object-contain object-right"
               priority
-              sizes="100vw"
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
+            {/* Subtle mobile overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent sm:hidden z-10" />
           </div>
-          {/* Subtle bottom fade */}
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#050505] to-transparent z-10" />
-        </div>
 
-        {/* Content Container: Full Width with Refined Side Padding */}
-        <div className="relative z-20 w-full px-4 sm:px-12 lg:px-20 pt-6 sm:pt-10 lg:pt-14 pb-6 sm:pb-8 flex-grow flex flex-col justify-between">
-          
-          {/* Top/Middle Left Copy */}
-          <div className="max-w-2xl space-y-3 sm:space-y-4">
+          {/* Left Hero Content: Inside the max-w-7xl boundary */}
+          <div className="relative z-10 max-w-xl lg:max-w-2xl space-y-3 sm:space-y-4 pt-2 sm:pt-4">
             <p className="font-serif text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#c9a24b] font-medium">
               WHERE PERFORMANCE MEETS CHAMPAGNE.
             </p>
@@ -56,8 +53,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Stacked Partner Badges Strip on Lower Left */}
-          <div className="pt-6 sm:pt-10 space-y-2 sm:space-y-2.5">
+          {/* Stacked Partner Badges Strip: Inside max-w-7xl boundary */}
+          <div className="relative z-10 pt-6 sm:pt-8 space-y-2 sm:space-y-2.5">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs">
               <span className="font-serif uppercase tracking-[0.16em] sm:tracking-[0.2em] text-white font-medium">BUGATTI</span>
               <span className="text-white/30">&bull;</span>
@@ -87,9 +84,9 @@ export function Hero() {
 
       </section>
 
-      {/* 3-Pillar Protection Strip (Matching Screenshot 2) */}
-      <section className="relative z-20 w-full border-t border-b border-white/10 bg-[#050505] py-5 sm:py-7 lg:py-8 px-4 sm:px-12 lg:px-20">
-        <div className="w-full max-w-[1720px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 text-center">
+      {/* 3-Pillar Protection Strip (Matching max-w-7xl) */}
+      <section className="relative z-20 w-full border-t border-b border-white/10 bg-[#050505] py-5 sm:py-7 lg:py-8">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 text-center">
           
           <div className="space-y-2 px-4">
             <h3 className="font-serif text-xs sm:text-sm tracking-[0.25em] uppercase text-[#c9a24b] font-medium">

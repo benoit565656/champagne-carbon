@@ -24,32 +24,35 @@ export function CoffretSection() {
         <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
-      {/* Top Center Title */}
-      <div className="relative z-20 w-full pt-8 sm:pt-12 lg:pt-14 text-center px-4">
-        <p className="font-serif text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium mb-2 sm:mb-3">
-          FORMULA 1® PODIUM HERITAGE &bull; DUCATI CORSE PARTNERSHIP
-        </p>
-        <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
-          THE CHAMPIONS&apos; RITUAL
-        </h2>
-        <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-2 sm:mt-4" />
-      </div>
+      {/* Center Container matching Header */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between flex-grow py-8 sm:py-12 lg:py-14">
+        {/* Top Center Title */}
+        <div className="text-center px-4">
+          <p className="font-serif text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium mb-2 sm:mb-3">
+            FORMULA 1® PODIUM HERITAGE &bull; DUCATI CORSE PARTNERSHIP
+          </p>
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white tracking-[0.2em] sm:tracking-[0.24em] uppercase font-light">
+            THE CHAMPIONS&apos; RITUAL
+          </h2>
+          <div className="w-12 sm:w-16 h-[1px] bg-[#c9a24b]/60 mx-auto mt-2 sm:mt-4" />
+        </div>
 
-      {/* Bottom Floating Info & CTA */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto pb-8 sm:pb-12 lg:pb-14 text-center px-4 sm:px-6 space-y-3 sm:space-y-4">
-        <p className="font-serif text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium">
-          PURE MOTORSPORT DNA
-        </p>
-        <p className="text-xs sm:text-sm text-[#ece9e2]/90 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
-          Born on the world&apos;s most coveted podiums. Champagne Carbon made motorsport history as the Official Champagne of Formula 1®, sprayed by racing legends from Monaco to Silverstone. Encased in genuine aerospace carbon-fiber weave inspired by Grand Prix single-seaters and Ducati Corse superbikes, Carbon embodies the ultimate fusion of precision engineering and victory.
-        </p>
-        <div>
-          <Link
-            href="/collection"
-            className="inline-block border border-[#c9a24b] text-[#c9a24b] hover:bg-[#c9a24b] hover:text-black transition-all duration-300 px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:shadow-[0_0_25px_rgba(201,162,75,0.4)]"
-          >
-            EXPLORE THE CUVÉES
-          </Link>
+        {/* Bottom Floating Info & CTA */}
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 space-y-3 sm:space-y-4 pt-12 sm:pt-20">
+          <p className="font-serif text-xs uppercase tracking-[0.35em] text-[#c9a24b] font-medium">
+            PURE MOTORSPORT DNA
+          </p>
+          <p className="text-xs sm:text-sm text-[#ece9e2]/90 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
+            Born on the world&apos;s most coveted podiums. Champagne Carbon made motorsport history as the Official Champagne of Formula 1®, sprayed by racing legends from Monaco to Silverstone. Encased in genuine aerospace carbon-fiber weave inspired by Grand Prix single-seaters and Ducati Corse superbikes, Carbon embodies the ultimate fusion of precision engineering and victory.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/collection"
+              className="inline-block border border-[#c9a24b] text-[#c9a24b] hover:bg-[#c9a24b] hover:text-black transition-all duration-300 px-8 py-3.5 sm:py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:shadow-[0_0_25px_rgba(201,162,75,0.4)]"
+            >
+              EXPLORE THE CUVÉES
+            </Link>
+          </div>
         </div>
       </div>
 

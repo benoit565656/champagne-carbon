@@ -35,7 +35,7 @@ export function BugattiSection() {
 
   return (
     <section className="w-full bg-[#000000] pt-6 sm:pt-10 lg:pt-12 pb-10 sm:pb-16 lg:pb-20 border-b border-white/5 relative">
-      <div className="w-full max-w-[1760px] mx-auto px-3 sm:px-8 lg:px-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading matching Champagne Carbon screenshot */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10 space-y-2.5 sm:space-y-3">

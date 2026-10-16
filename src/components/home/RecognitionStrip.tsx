@@ -6,7 +6,7 @@ import Image from 'next/image';
 export function RecognitionStrip() {
   return (
     <section className="w-full bg-[#000000] py-6 sm:py-8 lg:py-10 border-b border-white/10">
-      <div className="w-full max-w-[1760px] mx-auto px-4 sm:px-12 lg:px-20">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 lg:gap-8 items-center">
           
           {/* Left Summary Text */}
