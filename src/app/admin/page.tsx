@@ -25,8 +25,10 @@ import {
   Tag,
   Package,
   Layers,
-  ArrowUpRight
+  ArrowUpRight,
+  MessageSquare
 } from 'lucide-react';
+import { VipOutreachTab } from '@/components/admin/VipOutreachTab';
 
 interface Subscriber {
   id: string;
@@ -60,7 +62,7 @@ interface MappedPricingItem {
 
 export default function AdminPage() {
   // Navigation
-  const [activeTab, setActiveTab] = useState<'subscribers' | 'dispatcher' | 'pricing'>('pricing');
+  const [activeTab, setActiveTab] = useState<'subscribers' | 'dispatcher' | 'pricing' | 'vip_outreach'>('pricing');
 
   // Auth state
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -494,6 +496,21 @@ export default function AdminPage() {
             {brevoStatus?.connected && (
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
             )}
+          </button>
+
+          <button
+            onClick={() => setActiveTab('vip_outreach')}
+            className={`flex items-center gap-2 pb-3 px-2 border-b-2 text-xs uppercase tracking-wider font-medium transition-colors whitespace-nowrap ${
+              activeTab === 'vip_outreach'
+                ? 'border-gold text-gold font-semibold'
+                : 'border-transparent text-silver-muted hover:text-white'
+            }`}
+          >
+            <MessageSquare className="w-4 h-4 text-emerald-400" />
+            <span>VIP Outreach (WA &amp; Viber)</span>
+            <span className="bg-emerald-950/80 border border-emerald-800 text-emerald-300 px-2 py-0.5 rounded-full text-[10px]">
+              1,431 Clients
+            </span>
           </button>
         </div>
 
@@ -1290,6 +1307,9 @@ export default function AdminPage() {
             </div>
           </div>
         )}
+
+        {/* TAB 4: VIP CONCIERGE OUTREACH (WHATSAPP & VIBER) */}
+        {activeTab === 'vip_outreach' && <VipOutreachTab />}
 
       </div>
     </div>
