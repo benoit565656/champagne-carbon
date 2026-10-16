@@ -91,26 +91,19 @@ export default function ProductDetailPage() {
             ))}
           </div>
 
-          {/* Main Bottle View with Single Centered Backlight Glow */}
-          <div className="carbon-pdp-main-image relative overflow-hidden">
-            {/* Only 1 Glow: Smaller & Centered Behind the Bottle */}
+          {/* Main Bottle View with Authentic Champagne Carbon Studio Spotlight */}
+          <div className="carbon-pdp-main-image relative overflow-hidden bg-[#000000]">
+            {/* Authentic Neutral Studio Spotlight Vignette */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-              <div
-                className={`w-44 sm:w-56 h-72 sm:h-96 rounded-full blur-2xl opacity-65 ${
-                  product.id === 'carbon-rose'
-                    ? 'bg-[radial-gradient(circle_at_center,rgba(235,100,140,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                    : product.category === 'bugatti'
-                    ? 'bg-[radial-gradient(circle_at_center,rgba(0,102,204,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                    : 'bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.5)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                }`}
-              />
+              <div className="w-64 sm:w-80 h-[420px] sm:h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.05)_45%,transparent_75%)] blur-2xl opacity-80" />
+              <div className="absolute w-40 sm:w-52 h-72 sm:h-88 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12)_0%,transparent_70%)] blur-xl" />
             </div>
             <Image
               key={`${currentVariant.sku}-${selectedImageIndex}`}
               src={galleryImages[selectedImageIndex] || galleryImages[0]}
               alt={`${product.title} - ${currentVariant.format}`}
               fill
-              className="object-contain p-2 sm:p-4 drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] transition-all duration-500"
+              className="object-contain p-4 sm:p-6 drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] transition-all duration-500 z-10"
               priority
             />
           </div>

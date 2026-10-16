@@ -133,31 +133,49 @@ export default function CollectionPage() {
                   </span>
                 </div>
 
-                {/* Bottle Image with Single Centered Backlight Glow */}
+                {/* Bottle Image with Authentic Champagne Carbon Studio Spotlight & Glossy Floor Reflection */}
                 <Link
                   href={`/products/${product.slug}`}
-                  className="relative w-full h-[400px] sm:h-[480px] lg:h-[520px] flex items-end justify-center p-2 pt-4 sm:pt-6"
+                  className="relative w-full flex flex-col items-center justify-center p-2 group/bottle"
                 >
-                  {/* Only 1 Glow: Smaller & Centered Behind the Bottle */}
-                  <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                    <div
-                      className={`w-36 sm:w-44 h-60 sm:h-72 rounded-full blur-2xl opacity-60 group-hover:opacity-75 transition-opacity duration-500 ${
-                        product.id === 'carbon-rose'
-                          ? 'bg-[radial-gradient(circle_at_center,rgba(235,100,140,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                          : product.category === 'bugatti'
-                          ? 'bg-[radial-gradient(circle_at_center,rgba(0,102,204,0.45)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                          : 'bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.5)_0%,rgba(201,162,75,0.18)_40%,transparent_70%)]'
-                      }`}
+                  {/* Bottle Image Container with Neutral Studio Spotlight */}
+                  <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[500px] flex items-end justify-center pt-4 sm:pt-6">
+                    {/* Authentic Neutral Studio Spotlight Vignette */}
+                    <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                      <div className="w-56 sm:w-72 h-[340px] sm:h-[420px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.05)_45%,transparent_75%)] blur-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+                      <div className="absolute w-36 sm:w-44 h-64 sm:h-72 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12)_0%,transparent_70%)] blur-xl" />
+                    </div>
+
+                    <Image
+                      key={currentVariant.sku}
+                      src={currentVariant.image || product.images[0]}
+                      alt={`${product.title} - ${currentVariant.format}`}
+                      fill
+                      className="object-contain object-bottom group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] z-10"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
-                  <Image
-                    key={currentVariant.sku}
-                    src={currentVariant.image || product.images[0]}
-                    alt={`${product.title} - ${currentVariant.format}`}
-                    fill
-                    className="object-contain object-bottom group-hover:scale-[1.02] transition-all duration-500 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+
+                  {/* Mirror Floor Reflection Under Bottle Base */}
+                  <div className="relative w-full h-12 sm:h-16 -mt-[1px] pointer-events-none overflow-hidden flex justify-center z-0">
+                    <div 
+                      className="relative w-full h-[380px] sm:h-[460px] lg:h-[500px] -scale-y-100 opacity-30 blur-[0.4px]"
+                      style={{
+                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 35%, transparent 65%)',
+                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 35%, transparent 65%)'
+                      }}
+                    >
+                      <Image
+                        src={currentVariant.image || product.images[0]}
+                        alt=""
+                        fill
+                        className="object-contain object-bottom"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    {/* Subtle specular ground contact light */}
+                    <div className="absolute top-0 w-36 sm:w-48 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+                  </div>
                 </Link>
 
                 {/* Details */}
