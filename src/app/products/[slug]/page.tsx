@@ -91,18 +91,35 @@ export default function ProductDetailPage() {
             ))}
           </div>
 
-          {/* Main Bottle View */}
+          {/* Main Bottle View with Strong Backlight Glow */}
           <div className="carbon-pdp-main-image relative overflow-hidden">
-            {/* Luxury soft radial spotlight glow behind transparent bottle */}
+            {/* Strong Luxury Backlight Glow */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-              <div className="w-72 h-[480px] rounded-full bg-gradient-to-t from-[#c9a24b]/12 via-[#c9a24b]/4 to-transparent blur-3xl" />
+              <div
+                className={`w-72 sm:w-96 h-[500px] sm:h-[580px] rounded-full blur-3xl opacity-85 ${
+                  product.id === 'carbon-rose'
+                    ? 'bg-[radial-gradient(ellipse_at_center,rgba(235,100,140,0.5)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                    : product.category === 'bugatti'
+                    ? 'bg-[radial-gradient(ellipse_at_center,rgba(0,102,204,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                    : 'bg-[radial-gradient(ellipse_at_center,rgba(201,162,75,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                }`}
+              />
+              <div
+                className={`w-44 sm:w-60 h-80 sm:h-96 rounded-full blur-xl opacity-90 ${
+                  product.id === 'carbon-rose'
+                    ? 'bg-[radial-gradient(circle_at_center,rgba(255,140,175,0.65)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                    : product.category === 'bugatti'
+                    ? 'bg-[radial-gradient(circle_at_center,rgba(64,158,255,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                    : 'bg-[radial-gradient(circle_at_center,rgba(240,210,130,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                }`}
+              />
             </div>
             <Image
               key={`${currentVariant.sku}-${selectedImageIndex}`}
               src={galleryImages[selectedImageIndex] || galleryImages[0]}
               alt={`${product.title} - ${currentVariant.format}`}
               fill
-              className="object-contain p-8 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)] transition-all duration-500"
+              className="object-contain p-2 sm:p-4 drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)] transition-all duration-500"
               priority
             />
           </div>

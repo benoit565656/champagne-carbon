@@ -133,21 +133,38 @@ export default function CollectionPage() {
                   </span>
                 </div>
 
-                {/* Bottle Image */}
+                {/* Bottle Image with Strong Backlight Glow */}
                 <Link
                   href={`/products/${product.slug}`}
-                  className="relative w-full h-[420px] flex items-end justify-center p-6 overflow-hidden"
+                  className="relative w-full h-[400px] sm:h-[480px] lg:h-[520px] flex items-end justify-center p-2 overflow-hidden"
                 >
-                  {/* Luxury soft radial spotlight glow behind transparent bottle */}
+                  {/* Strong Luxury Backlight Glow */}
                   <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                    <div className="w-48 h-80 sm:w-64 sm:h-96 rounded-full bg-gradient-to-t from-[#c9a24b]/10 via-[#c9a24b]/5 to-transparent blur-2xl" />
+                    <div
+                      className={`w-64 sm:w-72 h-[380px] sm:h-[450px] rounded-full blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-700 ${
+                        product.id === 'carbon-rose'
+                          ? 'bg-[radial-gradient(ellipse_at_center,rgba(235,100,140,0.5)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                          : product.category === 'bugatti'
+                          ? 'bg-[radial-gradient(ellipse_at_center,rgba(0,102,204,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                          : 'bg-[radial-gradient(ellipse_at_center,rgba(201,162,75,0.55)_0%,rgba(201,162,75,0.25)_50%,transparent_75%)]'
+                      }`}
+                    />
+                    <div
+                      className={`w-36 sm:w-44 h-72 sm:h-88 rounded-full blur-xl opacity-90 group-hover:opacity-100 transition-opacity duration-700 ${
+                        product.id === 'carbon-rose'
+                          ? 'bg-[radial-gradient(circle_at_center,rgba(255,140,175,0.65)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                          : product.category === 'bugatti'
+                          ? 'bg-[radial-gradient(circle_at_center,rgba(64,158,255,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                          : 'bg-[radial-gradient(circle_at_center,rgba(240,210,130,0.7)_0%,rgba(201,162,75,0.35)_55%,transparent_90%)]'
+                      }`}
+                    />
                   </div>
                   <Image
                     key={currentVariant.sku}
                     src={currentVariant.image || product.images[0]}
                     alt={`${product.title} - ${currentVariant.format}`}
                     fill
-                    className="object-contain object-bottom group-hover:scale-105 transition-all duration-500 drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)]"
+                    className="object-contain object-bottom group-hover:scale-105 transition-all duration-500 drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </Link>
