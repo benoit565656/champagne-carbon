@@ -6,7 +6,7 @@ import { PRODUCTS } from '@/data/products';
 
 function checkAuth(): boolean {
   const cookieStore = cookies();
-  const sessionToken = cookieStore.get('carbon_admin_session')?.value;
+  const sessionToken = cookieStore.get('carbon_admin_session')?.value || cookieStore.get('mw_carbon_session')?.value;
   return Boolean(sessionToken);
 }
 

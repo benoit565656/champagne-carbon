@@ -42,6 +42,13 @@ export async function POST(req: NextRequest) {
       path: '/',
       maxAge: 30 * 24 * 60 * 60,
     });
+    response.cookies.set('carbon_admin_session', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 30 * 24 * 60 * 60,
+    });
 
     return response;
   } catch (err: any) {
@@ -52,5 +59,6 @@ export async function POST(req: NextRequest) {
 export async function DELETE() {
   const response = NextResponse.json({ success: true });
   response.cookies.delete('mw_carbon_session');
+  response.cookies.delete('carbon_admin_session');
   return response;
 }
